@@ -482,6 +482,128 @@
       line-height: 2;
     }
 
+    /* ===== SECTION 2b: TIMELINE ===== */
+    .timeline-section {
+      background: var(--nori);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 50% 50% at 10% 90%, rgba(185,28,28,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 90% 10%, rgba(63,98,18,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .timeline-section .section-label { color: var(--gold); }
+    .timeline-section .section-desc { color: rgba(255,255,255,0.6); }
+
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+      margin-top: 48px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--umeboshi), var(--gold), var(--earth-green-light));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 36px;
+      padding-left: 24px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -36px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--umeboshi);
+      border: 3px solid var(--nori);
+      box-shadow: 0 0 0 2px var(--umeboshi);
+    }
+
+    .timeline-item--highlight::before {
+      width: 16px;
+      height: 16px;
+      left: -38px;
+      top: 4px;
+      background: var(--gold);
+      box-shadow: 0 0 0 2px var(--gold), 0 0 16px rgba(202,138,4,0.4);
+    }
+
+    .timeline-item__date {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .timeline-item__title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+
+    .timeline-item__desc {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+
+    .timeline-gap {
+      text-align: center;
+      padding: 48px 0;
+      position: relative;
+    }
+
+    .timeline-gap::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.15) 0px,
+        rgba(255,255,255,0.15) 6px,
+        transparent 6px,
+        transparent 12px
+      );
+    }
+
+    .timeline-gap__text {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.05em;
+    }
+
+    .timeline-gap__sub {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.35);
+      margin-top: 8px;
+    }
+
     /* ===== SECTION 3: EVENT DETAILS (3 cards) ===== */
     .details-section {
       background: var(--rice);
@@ -1158,6 +1280,66 @@
         <p class="story-highlight">福岡県糸島市&mdash;&mdash;海と山に囲まれた食の宝庫から、この沈黙を破ります。糸島産の米と梅干しで握るおむすびが、2,000人の手を通じて、新しい世界記録になる。</p>
 
         <p>あなたの「握る」が、歴史を変える5分間になります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2b: 9-Year Gap Timeline -->
+  <section class="timeline-section" id="history">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Record History</div>
+        <h2 class="section-title" style="color:#fff;">9年間の空白</h2>
+        <p class="section-desc">2016年、わずか4ヶ月で6つの記録が次々と更新された。翌年の川崎以降、誰も挑戦していない。</p>
+      </div>
+
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="timeline-item__date">2016.07.08</div>
+          <div class="timeline-item__title">帯広大谷高校（北海道） &mdash; 845人</div>
+          <div class="timeline-item__desc">文化祭の一環として、初の大規模同時作成記録が誕生。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-item__date">2016.07.17</div>
+          <div class="timeline-item__title">能代市（秋田県） &mdash; 858人</div>
+          <div class="timeline-item__desc">わずか9日後に記録を更新。地域間の競争が始まる。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-item__date">2016.10.09</div>
+          <div class="timeline-item__title">湯川村（福島県） &mdash; 976人</div>
+          <div class="timeline-item__desc">100人以上の大幅更新。記録更新レースが加速。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-item__date">2016.10.10</div>
+          <div class="timeline-item__title">旭川市（北海道） &mdash; 1,273人</div>
+          <div class="timeline-item__desc">翌日に297人上乗せの記録更新。失格率1.5%の驚異的な品質管理。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-item__date">2016.10.16</div>
+          <div class="timeline-item__title">鳥取市（鳥取県） &mdash; 1,436人</div>
+          <div class="timeline-item__desc">旭川の記録を受けて参加者を増員。競争は過熱。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-item__date">2016.11.03</div>
+          <div class="timeline-item__title">桑名市（三重県） &mdash; 1,621人</div>
+          <div class="timeline-item__desc">2016年の最終記録。失格率2.9%の高い完成度。</div>
+        </div>
+        <div class="timeline-item timeline-item--highlight">
+          <div class="timeline-item__date">2017.11.05</div>
+          <div class="timeline-item__title">川崎市（神奈川県） &mdash; 1,876人 &#x1F3C6;</div>
+          <div class="timeline-item__desc">おむすび発祥の地・川崎JCが樹立した現行の世界記録。</div>
+        </div>
+
+        <div class="timeline-gap">
+          <div class="timeline-gap__text">- 9年間の空白 -</div>
+          <div class="timeline-gap__sub">2018年から2025年まで、誰も挑戦しなかった</div>
+        </div>
+
+        <div class="timeline-item timeline-item--highlight">
+          <div class="timeline-item__date">2026.05.30</div>
+          <div class="timeline-item__title" style="color:var(--gold);">糸島市（福岡県） &mdash; 2,000人超を目指して</div>
+          <div class="timeline-item__desc">9年間の沈黙を破る。福岡県糸島市から新たな歴史を刻む。</div>
+        </div>
       </div>
     </div>
   </section>
