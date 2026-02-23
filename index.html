@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>おにぎり同時作成ギネス世界記録挑戦 | 糸島市 2026</title>
-  <meta name="description" content="2026年5月、福岡県糸島市で2,000人規模のおにぎり同時作成ギネス世界記録に挑戦。実行委員会メンバーを募集中。">
+  <title>おにぎりギネス世界記録挑戦 2026 | 糸島市 参加者募集</title>
+  <meta name="description" content="2026年5月30日、福岡県糸島市で2,000人がおにぎりを同時に握るギネス世界記録に挑戦。参加者募集中。参加費には記念Tシャツ・ギネス認定証・糸島産食材が含まれます。">
+  <meta property="og:title" content="2,000人で握る、世界記録のおにぎり。">
+  <meta property="og:description" content="2026年5月30日 糸島市。9年間破られていないギネス世界記録に挑む。参加者募集中。">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
@@ -111,6 +114,7 @@
       display: flex;
       gap: 28px;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
@@ -180,7 +184,6 @@
       pointer-events: none;
     }
 
-    /* Floating onigiri triangles */
     .hero-triangle {
       position: absolute;
       width: 0; height: 0;
@@ -429,88 +432,15 @@
       transform: translateY(0);
     }
 
-    /* ===== SECTION 2: OVERVIEW (3 cards) ===== */
-    .overview {
-      background: var(--rice);
-    }
-
-    .overview-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .overview-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 40px 32px;
-      text-align: center;
-      border: 1px solid rgba(0,0,0,0.04);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .overview-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
-    }
-
-    .overview-card__icon {
-      width: 56px; height: 56px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      font-size: 1.5rem;
-    }
-
-    .overview-card:nth-child(1) .overview-card__icon {
-      background: rgba(185,28,28,0.08);
-    }
-
-    .overview-card:nth-child(2) .overview-card__icon {
-      background: rgba(63,98,18,0.08);
-    }
-
-    .overview-card:nth-child(3) .overview-card__icon {
-      background: rgba(146,64,14,0.08);
-    }
-
-    .overview-card__number {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      line-height: 1.1;
-      margin-bottom: 4px;
-    }
-
-    .overview-card:nth-child(1) .overview-card__number { color: var(--umeboshi); }
-    .overview-card:nth-child(2) .overview-card__number { color: var(--earth-green); }
-    .overview-card:nth-child(3) .overview-card__number { color: var(--amber); }
-
-    .overview-card__unit {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--stone-500);
-      margin-bottom: 12px;
-    }
-
-    .overview-card__desc {
-      font-size: 0.9rem;
-      color: var(--stone-500);
-      line-height: 1.7;
-    }
-
-    /* ===== SECTION 3: 9-YEAR GAP TIMELINE ===== */
-    .timeline-section {
+    /* ===== SECTION 2: STORY ===== */
+    .story-section {
       background: var(--nori);
       color: #fff;
       position: relative;
       overflow: hidden;
     }
 
-    .timeline-section::before {
+    .story-section::before {
       content: '';
       position: absolute;
       inset: 0;
@@ -520,405 +450,446 @@
       pointer-events: none;
     }
 
-    .timeline-section .section-label { color: var(--gold); }
-    .timeline-section .section-desc { color: rgba(255,255,255,0.6); }
+    .story-section .section-label { color: var(--gold); }
 
-    .timeline {
+    .story-content {
       position: relative;
-      padding-left: 40px;
-      margin-top: 48px;
+      max-width: 720px;
+      margin: 0 auto;
     }
 
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 8px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--umeboshi), var(--gold), var(--earth-green-light));
+    .story-content p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 2.2;
+      margin-bottom: 28px;
     }
 
-    .timeline-item {
-      position: relative;
-      padding-bottom: 36px;
-      padding-left: 24px;
+    .story-content p:last-child {
+      margin-bottom: 0;
     }
 
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -36px;
-      top: 6px;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--umeboshi);
-      border: 3px solid var(--nori);
-      box-shadow: 0 0 0 2px var(--umeboshi);
-    }
-
-    .timeline-item--highlight::before {
-      width: 16px;
-      height: 16px;
-      left: -38px;
-      top: 4px;
-      background: var(--gold);
-      box-shadow: 0 0 0 2px var(--gold), 0 0 16px rgba(202,138,4,0.4);
-    }
-
-    .timeline-item__date {
-      font-size: 0.8rem;
+    .story-content strong {
+      color: #fff;
       font-weight: 700;
+    }
+
+    .story-content .story-highlight {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
       color: var(--gold);
-      letter-spacing: 0.05em;
-      margin-bottom: 4px;
-    }
-
-    .timeline-item__title {
-      font-family: var(--font-display);
       font-weight: 700;
-      font-size: 1.15rem;
-      margin-bottom: 4px;
+      line-height: 2;
     }
 
-    .timeline-item__desc {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.7;
-    }
-
-    .timeline-gap {
-      text-align: center;
-      padding: 48px 0;
-      position: relative;
-    }
-
-    .timeline-gap::before {
-      content: '';
-      position: absolute;
-      left: 8px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: repeating-linear-gradient(
-        to bottom,
-        rgba(255,255,255,0.15) 0px,
-        rgba(255,255,255,0.15) 6px,
-        transparent 6px,
-        transparent 12px
-      );
-    }
-
-    .timeline-gap__text {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
-      color: rgba(255,255,255,0.2);
-      letter-spacing: 0.05em;
-    }
-
-    .timeline-gap__sub {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.35);
-      margin-top: 8px;
-    }
-
-    /* ===== SECTION 4: WHY ITOSHIMA ===== */
-    .why-section {
+    /* ===== SECTION 3: EVENT DETAILS (3 cards) ===== */
+    .details-section {
       background: var(--rice);
     }
 
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-
-    .why-card {
-      position: relative;
-      background: #fff;
-      border-radius: 16px;
-      padding: 36px 28px;
-      border: 1px solid rgba(0,0,0,0.04);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-
-    .why-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .why-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 4px;
-    }
-
-    .why-card:nth-child(1)::before { background: var(--umeboshi); }
-    .why-card:nth-child(2)::before { background: var(--earth-green); }
-    .why-card:nth-child(3)::before { background: var(--amber); }
-
-    .why-card__num {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: 3rem;
-      line-height: 1;
-      opacity: 0.06;
-      position: absolute;
-      top: 16px; right: 20px;
-    }
-
-    .why-card__title {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.2rem;
-      margin-bottom: 12px;
-    }
-
-    .why-card__text {
-      font-size: 0.92rem;
-      color: var(--stone-500);
-      line-height: 1.8;
-    }
-
-    /* ===== SECTION 5: ROADMAP ===== */
-    .roadmap-section {
-      background: var(--stone-100);
-    }
-
-    .roadmap-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .roadmap-phase {
-      background: #fff;
-      border-radius: 14px;
-      padding: 28px 24px;
-      position: relative;
-      border: 1px solid rgba(0,0,0,0.04);
-      transition: transform 0.3s;
-    }
-
-    .roadmap-phase:hover {
-      transform: translateY(-3px);
-    }
-
-    .roadmap-phase__num {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: 0.75rem;
-      color: var(--umeboshi);
-      letter-spacing: 0.08em;
-      margin-bottom: 8px;
-    }
-
-    .roadmap-phase__period {
-      font-size: 0.78rem;
-      color: var(--stone-500);
-      margin-bottom: 12px;
-    }
-
-    .roadmap-phase__title {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.15rem;
-      margin-bottom: 16px;
-    }
-
-    .roadmap-phase__list {
-      list-style: none;
-    }
-
-    .roadmap-phase__list li {
-      font-size: 0.85rem;
-      color: var(--stone-500);
-      padding: 4px 0;
-      padding-left: 16px;
-      position: relative;
-      line-height: 1.6;
-    }
-
-    .roadmap-phase__list li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 12px;
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--stone-300);
-    }
-
-    /* arrow between phases */
-    .roadmap-phase::after {
-      content: '';
-      position: absolute;
-      right: -14px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 0; height: 0;
-      border-top: 8px solid transparent;
-      border-bottom: 8px solid transparent;
-      border-left: 8px solid var(--stone-300);
-    }
-
-    .roadmap-phase:last-child::after {
-      display: none;
-    }
-
-    /* ===== SECTION 6: BUDGET ===== */
-    .budget-section {
-      background: var(--rice);
-    }
-
-    .budget-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-top: 48px;
-    }
-
-    .budget-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 36px;
-      border: 1px solid rgba(0,0,0,0.04);
-    }
-
-    .budget-card__header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 24px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--stone-200);
-    }
-
-    .budget-card__label {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.15rem;
-    }
-
-    .budget-card__total {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: 1.5rem;
-    }
-
-    .budget-card--income .budget-card__total { color: var(--earth-green); }
-    .budget-card--expense .budget-card__total { color: var(--umeboshi); }
-
-    .budget-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.03);
-    }
-
-    .budget-item:last-child { border-bottom: none; }
-
-    .budget-item__name {
-      font-size: 0.9rem;
-      color: var(--charcoal-light);
-    }
-
-    .budget-item__amount {
-      font-weight: 700;
-      font-size: 0.9rem;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .budget-balance {
-      text-align: center;
-      margin-top: 40px;
-      padding: 28px;
-      background: linear-gradient(135deg, rgba(63,98,18,0.06), rgba(185,28,28,0.04));
-      border-radius: 14px;
-      border: 1px solid rgba(63,98,18,0.1);
-    }
-
-    .budget-balance__label {
-      font-size: 0.85rem;
-      color: var(--stone-500);
-      margin-bottom: 4px;
-    }
-
-    .budget-balance__value {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: 1.8rem;
-      color: var(--earth-green);
-    }
-
-    .budget-balance__note {
-      font-size: 0.8rem;
-      color: var(--stone-500);
-      margin-top: 8px;
-    }
-
-    /* ===== SECTION 7: ROLES ===== */
-    .roles-section {
-      background: var(--stone-100);
-    }
-
-    .roles-grid {
+    .details-cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
-    .role-card {
+    .details-card {
       background: #fff;
       border-radius: 16px;
-      padding: 32px 28px;
+      padding: 40px 32px;
+      text-align: center;
       border: 1px solid rgba(0,0,0,0.04);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .details-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+    }
+
+    .details-card__icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.5rem;
+    }
+
+    .details-card:nth-child(1) .details-card__icon {
+      background: rgba(185,28,28,0.08);
+    }
+
+    .details-card:nth-child(2) .details-card__icon {
+      background: rgba(63,98,18,0.08);
+    }
+
+    .details-card:nth-child(3) .details-card__icon {
+      background: rgba(146,64,14,0.08);
+    }
+
+    .details-card__number {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.2rem, 4.5vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .details-card:nth-child(1) .details-card__number { color: var(--umeboshi); }
+    .details-card:nth-child(2) .details-card__number { color: var(--earth-green); }
+    .details-card:nth-child(3) .details-card__number { color: var(--amber); }
+
+    .details-card__label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--stone-500);
+      margin-bottom: 12px;
+    }
+
+    .details-card__desc {
+      font-size: 0.9rem;
+      color: var(--stone-500);
+      line-height: 1.7;
+    }
+
+    /* ===== SECTION 4: BENEFITS (4 cards) ===== */
+    .benefits-section {
+      background: var(--stone-100);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .benefit-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+    }
+
+    .benefit-card__icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 1.5rem;
+      background: var(--rice-dark);
+    }
+
+    .benefit-card__title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .benefit-card__desc {
+      font-size: 0.85rem;
+      color: var(--stone-500);
+      line-height: 1.7;
+    }
+
+    /* ===== SECTION 5: MID CTA BANNER ===== */
+    .mid-cta {
+      background: var(--umeboshi);
+      color: #fff;
+      text-align: center;
+      padding: 56px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mid-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(255,255,255,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .mid-cta__content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .mid-cta__text {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .mid-cta__sub {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-bottom: 24px;
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--umeboshi);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+
+    .btn-white:hover {
+      background: var(--rice);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    /* ===== SECTION 6: PRICING (2 cards) ===== */
+    .pricing-section {
+      background: var(--rice);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px 32px;
+      text-align: center;
+      border: 1px solid rgba(0,0,0,0.04);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
       overflow: hidden;
     }
 
-    .role-card:hover {
+    .pricing-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 32px rgba(0,0,0,0.06);
     }
 
-    .role-card__icon {
-      width: 48px; height: 48px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      margin-bottom: 16px;
-      background: var(--rice-dark);
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--umeboshi);
     }
 
-    .role-card__title {
+    .pricing-card:nth-child(2)::before {
+      background: var(--earth-green);
+    }
+
+    .pricing-card__type {
       font-family: var(--font-display);
       font-weight: 700;
       font-size: 1.1rem;
       margin-bottom: 8px;
     }
 
-    .role-card__count {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--umeboshi);
-      margin-bottom: 12px;
+    .pricing-card__price {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.5rem, 5vw, 3.2rem);
+      line-height: 1.1;
+      margin-bottom: 4px;
     }
 
-    .role-card__desc {
+    .pricing-card:nth-child(1) .pricing-card__price { color: var(--umeboshi); }
+    .pricing-card:nth-child(2) .pricing-card__price { color: var(--earth-green); }
+
+    .pricing-card__tax {
+      font-size: 0.8rem;
+      color: var(--stone-500);
+      margin-bottom: 24px;
+    }
+
+    .pricing-card__includes {
+      list-style: none;
+      text-align: left;
+    }
+
+    .pricing-card__includes li {
+      font-size: 0.88rem;
+      color: var(--charcoal-light);
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .pricing-card__includes li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: rgba(63,98,18,0.1);
+    }
+
+    .pricing-card__includes li::after {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 17px;
+      width: 8px; height: 4px;
+      border-left: 2px solid var(--earth-green);
+      border-bottom: 2px solid var(--earth-green);
+      transform: rotate(-45deg);
+    }
+
+    .pricing-cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    /* ===== SECTION 7: SCHEDULE ===== */
+    .schedule-section {
+      background: var(--stone-100);
+    }
+
+    .schedule-list {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .schedule-item {
+      display: flex;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--stone-200);
+      align-items: flex-start;
+    }
+
+    .schedule-item:last-child {
+      border-bottom: none;
+    }
+
+    .schedule-item__time {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: var(--umeboshi);
+      min-width: 80px;
+      flex-shrink: 0;
+      line-height: 1.4;
+    }
+
+    .schedule-item__content {
+      flex: 1;
+    }
+
+    .schedule-item__title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .schedule-item__desc {
       font-size: 0.88rem;
       color: var(--stone-500);
       line-height: 1.7;
     }
 
-    /* ===== SECTION 8: CTA / FOOTER ===== */
+    /* ===== SECTION 8: FAQ ===== */
+    .faq-section {
+      background: var(--rice);
+    }
+
+    .faq-list {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--stone-200);
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid var(--stone-200);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 0;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      line-height: 1.6;
+    }
+
+    .faq-question:hover {
+      color: var(--umeboshi);
+    }
+
+    .faq-question__icon {
+      width: 24px; height: 24px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .faq-question__icon::before,
+    .faq-question__icon::after {
+      content: '';
+      position: absolute;
+      background: var(--stone-500);
+      transition: transform 0.3s ease;
+    }
+
+    .faq-question__icon::before {
+      width: 14px; height: 2px;
+      top: 11px; left: 5px;
+    }
+
+    .faq-question__icon::after {
+      width: 2px; height: 14px;
+      top: 5px; left: 11px;
+    }
+
+    .faq-item.open .faq-question__icon::after {
+      transform: rotate(90deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .faq-answer__inner {
+      padding: 0 0 20px;
+      font-size: 0.92rem;
+      color: var(--stone-500);
+      line-height: 1.9;
+    }
+
+    /* ===== SECTION 9: CTA + FOOTER ===== */
     .cta-section {
       background: var(--charcoal);
       color: #fff;
@@ -1022,14 +993,22 @@
       opacity: 0.5;
     }
 
+    .footer-committee-link {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      font-size: 0.75rem;
+      opacity: 0.35;
+      transition: opacity 0.2s;
+    }
+
+    .footer-committee-link:hover {
+      opacity: 0.7;
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
-      .roadmap-grid {
+      .benefits-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-
-      .roadmap-phase::after {
-        display: none;
       }
     }
 
@@ -1053,17 +1032,15 @@
         border-bottom: 1px solid var(--stone-200);
       }
 
-      .overview-cards,
-      .why-grid,
-      .roles-grid {
+      .details-cards {
         grid-template-columns: 1fr;
       }
 
-      .roadmap-grid {
+      .benefits-grid {
         grid-template-columns: 1fr;
       }
 
-      .budget-grid {
+      .pricing-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1081,6 +1058,17 @@
         width: 100%;
         max-width: 320px;
         justify-content: center;
+      }
+
+      .mid-cta { padding: 40px 24px; }
+
+      .schedule-item {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .schedule-item__time {
+        min-width: auto;
       }
 
       .footer {
@@ -1103,16 +1091,14 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo">
         <span class="triangle"></span>
-        糸島おにぎりギネス挑戦
+        おにぎりギネス糸島
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#overview">挑戦の概要</a></li>
-        <li><a href="#history">記録の歴史</a></li>
-        <li><a href="#why">なぜ糸島か</a></li>
-        <li><a href="#plan">計画</a></li>
-        <li><a href="#budget">予算</a></li>
-        <li><a href="#roles">募集中の役割</a></li>
-        <li><a href="https://forms.gle/dKenFQpsjgssSvP27" target="_blank" rel="noopener" class="nav-cta">参加する</a></li>
+        <li><a href="#story">想い</a></li>
+        <li><a href="#details">イベント概要</a></li>
+        <li><a href="#pricing">参加費</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#" class="nav-cta">参加申し込み</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
         <span></span><span></span><span></span>
@@ -1128,17 +1114,17 @@
     <div class="hero-triangle hero-triangle--4"></div>
 
     <div class="hero-content">
-      <div class="hero-badge">実行委員会メンバー募集中</div>
+      <div class="hero-badge">2026.5.30 参加者募集中</div>
       <h1 class="hero-title">
         <span class="number">2,000</span>人で握る、<br>
         <span class="accent">世界記録</span>のおにぎり。
       </h1>
       <p class="hero-sub">
-        2026年5月、福岡県糸島市。<br>9年間破られていないギネス世界記録に挑む。
+        2026年5月30日、福岡県糸島市。<br>9年間破られていないギネス世界記録に、あなたも挑戦しませんか。
       </p>
       <div class="hero-actions">
-        <a href="https://forms.gle/dKenFQpsjgssSvP27" target="_blank" rel="noopener" class="btn btn-primary">
-          実行委員会に参加する
+        <a href="#" class="btn btn-primary">
+          参加を申し込む
           <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="guidebook.pdf" download class="btn btn-secondary">
@@ -1154,339 +1140,296 @@
     </div>
   </section>
 
-  <!-- Section 2: Overview -->
-  <section class="overview" id="overview">
-    <div class="container">
-      <div class="section-header section-header--center reveal">
-        <div class="section-label">Challenge Overview</div>
-        <h2 class="section-title">挑戦の概要</h2>
-        <p class="section-desc">2017年以来、9年間誰も破れなかった記録。糸島から、その歴史を塗り替える。</p>
-      </div>
-      <div class="overview-cards">
-        <div class="overview-card reveal">
-          <div class="overview-card__icon">&#127927;</div>
-          <div class="overview-card__number">1,876</div>
-          <div class="overview-card__unit">人 &mdash; 現在の世界記録</div>
-          <p class="overview-card__desc">2017年、川崎JCが達成。おにぎり発祥の地・川崎で生まれた記録が、今も世界の頂点に立つ。</p>
-        </div>
-        <div class="overview-card reveal" style="transition-delay: 0.1s;">
-          <div class="overview-card__icon">&#127919;</div>
-          <div class="overview-card__number">2,000<span style="font-size:0.5em">+</span></div>
-          <div class="overview-card__unit">人 &mdash; 私たちの目標</div>
-          <p class="overview-card__desc">2,200人を募集し、失格率5%を見込んでも2,000人超の成功を狙う。記録を約7%上回る挑戦。</p>
-        </div>
-        <div class="overview-card reveal" style="transition-delay: 0.2s;">
-          <div class="overview-card__icon">&#128197;</div>
-          <div class="overview-card__number">5.30</div>
-          <div class="overview-card__unit">2026年5月 &mdash; 決戦の日</div>
-          <p class="overview-card__desc">気候が安定する5月末の週末。糸島の新鮮な米と梅干しで、全員が同時に5分間でおにぎりを握る。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 3: 9-Year Gap Timeline -->
-  <section class="timeline-section" id="history">
+  <!-- Section 2: Story -->
+  <section class="story-section" id="story">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-label">Record History</div>
-        <h2 class="section-title" style="color:#fff;">9年間の空白</h2>
-        <p class="section-desc">2016年、わずか4ヶ月で6つの記録が次々と更新された。翌年の川崎以降、誰も挑戦していない。</p>
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title" style="color:#fff;">なぜ、今おにぎりなのか</h2>
       </div>
 
-      <div class="timeline reveal">
-        <div class="timeline-item">
-          <div class="timeline-item__date">2016.07.08</div>
-          <div class="timeline-item__title">帯広大谷高校（北海道） &mdash; 845人</div>
-          <div class="timeline-item__desc">文化祭の一環として、初の大規模同時作成記録が誕生。</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-item__date">2016.07.17</div>
-          <div class="timeline-item__title">能代市（秋田県） &mdash; 858人</div>
-          <div class="timeline-item__desc">わずか9日後に記録を更新。地域間の競争が始まる。</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-item__date">2016.10.09</div>
-          <div class="timeline-item__title">湯川村（福島県） &mdash; 976人</div>
-          <div class="timeline-item__desc">100人以上の大幅更新。記録更新レースが加速。</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-item__date">2016.10.10</div>
-          <div class="timeline-item__title">旭川市（北海道） &mdash; 1,273人</div>
-          <div class="timeline-item__desc">翌日に297人上乗せの記録更新。失格率1.5%の驚異的な品質管理。</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-item__date">2016.10.16</div>
-          <div class="timeline-item__title">鳥取市（鳥取県） &mdash; 1,436人</div>
-          <div class="timeline-item__desc">旭川の記録を受けて参加者を増員。競争は過熱。</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-item__date">2016.11.03</div>
-          <div class="timeline-item__title">桑名市（三重県） &mdash; 1,621人</div>
-          <div class="timeline-item__desc">2016年の最終記録。失格率2.9%の高い完成度。</div>
-        </div>
-        <div class="timeline-item timeline-item--highlight">
-          <div class="timeline-item__date">2017.11.05</div>
-          <div class="timeline-item__title">川崎市（神奈川県） &mdash; 1,876人 &#x1F3C6;</div>
-          <div class="timeline-item__desc">おにぎり発祥の地・川崎JCが樹立した現行の世界記録。</div>
-        </div>
+      <div class="story-content reveal">
+        <p>2016年、日本各地で「おにぎり同時作成」のギネス世界記録を巡る熱い競争が繰り広げられました。北海道、秋田、福島、鳥取、三重&mdash;&mdash;わずか4ヶ月の間に<strong>6つの記録が次々と塗り替えられた</strong>のです。</p>
 
-        <div class="timeline-gap">
-          <div class="timeline-gap__text">- 9年間の空白 -</div>
-          <div class="timeline-gap__sub">2018年から2025年まで、誰も挑戦しなかった</div>
-        </div>
+        <p>そして2017年、おにぎり発祥の地・川崎で<strong>1,876人</strong>という記録が打ち立てられました。それ以来、<strong>9年間、誰もこの記録に挑戦していません。</strong></p>
 
-        <div class="timeline-item timeline-item--highlight">
-          <div class="timeline-item__date">2026.05.30</div>
-          <div class="timeline-item__title" style="color:var(--gold);">糸島市（福岡県） &mdash; 2,000人超を目指して</div>
-          <div class="timeline-item__desc">9年間の沈黙を破る。福岡県糸島市から新たな歴史を刻む。</div>
+        <p>記録が破られなかったのではありません。誰も挑まなかっただけです。</p>
+
+        <p class="story-highlight">福岡県糸島市&mdash;&mdash;海と山に囲まれた食の宝庫から、この沈黙を破ります。糸島産の米と梅干しで握るおにぎりが、2,000人の手を通じて、新しい世界記録になる。</p>
+
+        <p>あなたの「握る」が、歴史を変える5分間になります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Event Details -->
+  <section class="details-section" id="details">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <div class="section-label">Event Details</div>
+        <h2 class="section-title">イベント概要</h2>
+        <p class="section-desc">参加に必要な基本情報をまとめました。</p>
+      </div>
+
+      <div class="details-cards">
+        <div class="details-card reveal">
+          <div class="details-card__icon">&#128197;</div>
+          <div class="details-card__number">5.30</div>
+          <div class="details-card__label">2026年5月30日（土）</div>
+          <p class="details-card__desc">10:00受付開始、12:00おにぎり作成スタート。午後はマルシェも開催。</p>
+        </div>
+        <div class="details-card reveal" style="transition-delay: 0.1s;">
+          <div class="details-card__icon">&#127968;</div>
+          <div class="details-card__number" style="font-size: clamp(1.5rem, 3vw, 2rem);">伊都の杜<br>しばふ公園</div>
+          <div class="details-card__label">福岡県糸島市</div>
+          <p class="details-card__desc">博多駅から車で約40分。JR筑肥線からもアクセス可能な広大な公園。</p>
+        </div>
+        <div class="details-card reveal" style="transition-delay: 0.2s;">
+          <div class="details-card__icon">&#9201;</div>
+          <div class="details-card__number">5<span style="font-size:0.5em">分間</span></div>
+          <div class="details-card__label">おにぎり同時作成チャレンジ</div>
+          <p class="details-card__desc">全員が同時に5分間でおにぎりを握り、ギネス公式審判員が認定します。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 4: Why Itoshima -->
-  <section class="why-section" id="why">
+  <!-- Section 4: Benefits -->
+  <section class="benefits-section" id="benefits">
     <div class="container">
       <div class="section-header section-header--center reveal">
-        <div class="section-label">Why Itoshima</div>
-        <h2 class="section-title">なぜ糸島なのか</h2>
-        <p class="section-desc">福岡都市圏の玄関口に位置する糸島市には、この挑戦を成功させる3つの強みがある。</p>
+        <div class="section-label">What You Get</div>
+        <h2 class="section-title">参加特典</h2>
+        <p class="section-desc">参加費に含まれる特典の数々。世界記録の瞬間を、形に残せます。</p>
       </div>
 
-      <div class="why-grid">
-        <div class="why-card reveal">
-          <div class="why-card__num">01</div>
-          <div class="why-card__title">福岡都市圏260万人の動員力</div>
-          <p class="why-card__text">福岡市に隣接し、天神・博多から車で約40分。260万人の都市圏から2,200人を集める現実的なアクセス。JR筑肥線・西九州自動車道の交通インフラも充実。</p>
+      <div class="benefits-grid">
+        <div class="benefit-card reveal">
+          <div class="benefit-card__icon">&#127942;</div>
+          <div class="benefit-card__title">ギネス認定証</div>
+          <p class="benefit-card__desc">世界記録達成時、参加者全員にギネス公式の認定証が授与されます。</p>
         </div>
-        <div class="why-card reveal" style="transition-delay: 0.1s;">
-          <div class="why-card__num">02</div>
-          <div class="why-card__title">農業の街・JA糸島との連携</div>
-          <p class="why-card__text">糸島は福岡県有数の農業地帯。JA糸島との連携で高品質な糸島産米の調達が可能。地産地消のストーリーがメディア訴求力を高める。</p>
+        <div class="benefit-card reveal" style="transition-delay: 0.1s;">
+          <div class="benefit-card__icon">&#128085;</div>
+          <div class="benefit-card__title">記念Tシャツ</div>
+          <p class="benefit-card__desc">イベント限定デザインのオリジナルTシャツ。当日のユニフォームとして着用します。</p>
         </div>
-        <div class="why-card reveal" style="transition-delay: 0.2s;">
-          <div class="why-card__num">03</div>
-          <div class="why-card__title">移住者が増える注目のまち</div>
-          <p class="why-card__text">海と山に囲まれた糸島は、近年移住者が急増する全国注目のエリア。新旧住民のコミュニティの絆を深めるイベントとして最適な土壌がある。</p>
+        <div class="benefit-card reveal" style="transition-delay: 0.2s;">
+          <div class="benefit-card__icon">&#127834;</div>
+          <div class="benefit-card__title">糸島産食材</div>
+          <p class="benefit-card__desc">おにぎりに使う米と梅干しはすべて糸島産。地元の味で世界記録に挑みます。</p>
+        </div>
+        <div class="benefit-card reveal" style="transition-delay: 0.3s;">
+          <div class="benefit-card__icon">&#127869;</div>
+          <div class="benefit-card__title">マルシェ参加</div>
+          <p class="benefit-card__desc">挑戦後は糸島グルメが楽しめるマルシェを開催。地元の美味しいものが大集合。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 5: Roadmap -->
-  <section class="roadmap-section" id="plan">
+  <!-- Section 5: Mid CTA Banner -->
+  <div class="mid-cta reveal">
+    <div class="mid-cta__content">
+      <div class="mid-cta__text">定員2,500名に達し次第、募集終了</div>
+      <div class="mid-cta__sub">世界記録挑戦の一員になれるチャンスをお見逃しなく</div>
+      <a href="#" class="btn btn-white">
+        今すぐ参加を申し込む
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Section 6: Pricing -->
+  <section class="pricing-section" id="pricing">
     <div class="container">
       <div class="section-header section-header--center reveal">
-        <div class="section-label">Roadmap</div>
-        <h2 class="section-title">計画の全体像</h2>
-        <p class="section-desc">約3.5ヶ月の4フェーズ。2月に始動し、5月末の決戦に向けて着実に積み上げる。</p>
+        <div class="section-label">Pricing</div>
+        <h2 class="section-title">参加費</h2>
+        <p class="section-desc">参加費には材料費・Tシャツ・保険料など、必要なものがすべて含まれています。</p>
       </div>
 
-      <div class="roadmap-grid">
-        <div class="roadmap-phase reveal">
-          <div class="roadmap-phase__num">PHASE 01</div>
-          <div class="roadmap-phase__period">2月中旬 - 2月下旬（2週間）</div>
-          <div class="roadmap-phase__title">企画立案</div>
-          <ul class="roadmap-phase__list">
-            <li>実行委員会の立ち上げ</li>
-            <li>ギネス申請（優先審査）</li>
-            <li>会場候補地の選定</li>
-            <li>スポンサー交渉開始</li>
-            <li>保健所・消防署への事前相談</li>
+      <div class="pricing-grid">
+        <div class="pricing-card reveal">
+          <div class="pricing-card__type">一般</div>
+          <div class="pricing-card__price">&yen;5,000</div>
+          <div class="pricing-card__tax">税込</div>
+          <ul class="pricing-card__includes">
+            <li>おにぎり材料（糸島産米・梅干し・海苔）</li>
+            <li>イベント限定記念Tシャツ</li>
+            <li>ギネス認定証（記録達成時）</li>
+            <li>イベント保険</li>
+            <li>マルシェ入場</li>
           </ul>
         </div>
-        <div class="roadmap-phase reveal" style="transition-delay: 0.1s;">
-          <div class="roadmap-phase__num">PHASE 02</div>
-          <div class="roadmap-phase__period">3月上旬 - 4月下旬（8週間）</div>
-          <div class="roadmap-phase__title">準備・募集</div>
-          <ul class="roadmap-phase__list">
-            <li>参加者2,200人の募集</li>
-            <li>材料の正式発注</li>
-            <li>練習会4回の開催</li>
-            <li>ボランティア300人の確保</li>
-            <li>メディア取材の受付</li>
-          </ul>
-        </div>
-        <div class="roadmap-phase reveal" style="transition-delay: 0.2s;">
-          <div class="roadmap-phase__num">PHASE 03</div>
-          <div class="roadmap-phase__period">5月上旬 - 5月下旬（4週間）</div>
-          <div class="roadmap-phase__title">最終準備</div>
-          <ul class="roadmap-phase__list">
-            <li>ギネス承認の確認</li>
-            <li>セクションリーダー研修</li>
-            <li>審判員トレーニング</li>
-            <li>会場設営リハーサル</li>
-            <li>緊急連絡網の構築</li>
-          </ul>
-        </div>
-        <div class="roadmap-phase reveal" style="transition-delay: 0.3s;">
-          <div class="roadmap-phase__num">PHASE 04</div>
-          <div class="roadmap-phase__period">5月30日（土）</div>
-          <div class="roadmap-phase__title">決戦当日</div>
-          <ul class="roadmap-phase__list">
-            <li>早朝4時: 炊飯開始</li>
-            <li>8時: 受付開始（2,200人）</li>
-            <li>10時: おにぎり作成5分間</li>
-            <li>10:45: 記録達成発表</li>
-            <li>13時: 全行程完了</li>
+        <div class="pricing-card reveal" style="transition-delay: 0.1s;">
+          <div class="pricing-card__type">学生</div>
+          <div class="pricing-card__price">&yen;2,500</div>
+          <div class="pricing-card__tax">税込（高校生以下）</div>
+          <ul class="pricing-card__includes">
+            <li>おにぎり材料（糸島産米・梅干し・海苔）</li>
+            <li>イベント限定記念Tシャツ</li>
+            <li>ギネス認定証（記録達成時）</li>
+            <li>イベント保険</li>
+            <li>マルシェ入場</li>
           </ul>
         </div>
       </div>
+
+      <div class="pricing-cta reveal">
+        <a href="#" class="btn btn-primary">
+          参加を申し込む
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Section 6: Budget -->
-  <section class="budget-section" id="budget">
+  <!-- Section 7: Schedule -->
+  <section class="schedule-section" id="schedule">
     <div class="container">
       <div class="section-header section-header--center reveal">
-        <div class="section-label">Budget Plan</div>
-        <h2 class="section-title">予算の骨格</h2>
-        <p class="section-desc">総額約605万円。スポンサー収入・参加費・補助金等で収支バランスを確保。</p>
+        <div class="section-label">Schedule</div>
+        <h2 class="section-title">当日の流れ</h2>
+        <p class="section-desc">受付から記録挑戦、マルシェまでの1日のスケジュール。</p>
       </div>
 
-      <div class="budget-grid reveal">
-        <!-- Income -->
-        <div class="budget-card budget-card--income">
-          <div class="budget-card__header">
-            <div class="budget-card__label">収入の部</div>
-            <div class="budget-card__total">&yen;6,050,000</div>
-          </div>
-          <div class="budget-item">
-            <span class="budget-item__name">スポンサー収入（12社）</span>
-            <span class="budget-item__amount">&yen;3,200,000</span>
-          </div>
-          <div class="budget-item">
-            <span class="budget-item__name">参加費（2,200人）</span>
-            <span class="budget-item__amount">&yen;1,650,000</span>
-          </div>
-          <div class="budget-item">
-            <span class="budget-item__name">自治体補助金</span>
-            <span class="budget-item__amount">&yen;400,000</span>
-          </div>
-          <div class="budget-item">
-            <span class="budget-item__name">クラウドファンディング</span>
-            <span class="budget-item__amount">&yen;300,000</span>
-          </div>
-          <div class="budget-item">
-            <span class="budget-item__name">物販・グッズ販売</span>
-            <span class="budget-item__amount">&yen;300,000</span>
-          </div>
-          <div class="budget-item">
-            <span class="budget-item__name">出店料収入</span>
-            <span class="budget-item__amount">&yen;200,000</span>
+      <div class="schedule-list reveal">
+        <div class="schedule-item">
+          <div class="schedule-item__time">10:00</div>
+          <div class="schedule-item__content">
+            <div class="schedule-item__title">受付開始</div>
+            <div class="schedule-item__desc">受付でTシャツを受け取り、指定されたテーブルへ。おにぎりの作り方を確認します。</div>
           </div>
         </div>
-
-        <!-- Expense -->
-        <div class="budget-card budget-card--expense">
-          <div class="budget-card__header">
-            <div class="budget-card__label">支出の部</div>
-            <div class="budget-card__total">&yen;6,050,000</div>
-          </div>
-          <div class="budget-item">
-            <span class="budget-item__name">ギネス公式審判員派遣</span>
-            <span class="budget-item__amount">&yen;2,000,000</span>
-          </div>
-          <div class="budget-item">
-            <span class="budget-item__name">ギネス優先審査</span>
-            <span class="budget-item__amount">&yen;600,000</span>
-          </div>
-          <div class="budget-item">
-            <span class="budget-item__name">審判員・スタッフ人件費</span>
-            <span class="budget-item__amount">&yen;500,000</span>
-          </div>
-          <div class="budget-item">
-            <span class="budget-item__name">広告宣伝費</span>
-            <span class="budget-item__amount">&yen;400,000</span>
-          </div>
-          <div class="budget-item">
-            <span class="budget-item__name">テーブル・設備レンタル</span>
-            <span class="budget-item__amount">&yen;550,000</span>
-          </div>
-          <div class="budget-item">
-            <span class="budget-item__name">会場・材料・映像・保険等</span>
-            <span class="budget-item__amount">&yen;1,584,000</span>
-          </div>
-          <div class="budget-item">
-            <span class="budget-item__name">予備費</span>
-            <span class="budget-item__amount">&yen;416,000</span>
+        <div class="schedule-item">
+          <div class="schedule-item__time">11:30</div>
+          <div class="schedule-item__content">
+            <div class="schedule-item__title">開会式</div>
+            <div class="schedule-item__desc">ギネス公式審判員の紹介、ルール説明、おにぎり作成のデモンストレーション。</div>
           </div>
         </div>
-      </div>
-
-      <div class="budget-balance reveal">
-        <div class="budget-balance__label">収支バランス</div>
-        <div class="budget-balance__value">&plusmn; &yen;0</div>
-        <div class="budget-balance__note">予備費 &yen;416,000 を含む。ギネス関連費用は約260万円（全体の43%）。</div>
+        <div class="schedule-item">
+          <div class="schedule-item__time">12:00</div>
+          <div class="schedule-item__content">
+            <div class="schedule-item__title">おにぎり作成チャレンジ（5分間）</div>
+            <div class="schedule-item__desc">合図とともに全員が一斉におにぎりを握ります。審判員が各テーブルを巡回して確認。</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-item__time">12:45</div>
+          <div class="schedule-item__content">
+            <div class="schedule-item__title">結果発表</div>
+            <div class="schedule-item__desc">集計完了後、ギネス公式審判員が結果を発表。世界記録達成なるか。</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-item__time">13:30</div>
+          <div class="schedule-item__content">
+            <div class="schedule-item__title">マルシェ・自由時間</div>
+            <div class="schedule-item__desc">糸島の食材を使ったグルメマルシェを開催。作ったおにぎりと一緒に楽しめます。</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 7: Roles -->
-  <section class="roles-section" id="roles">
+  <!-- Section 8: FAQ -->
+  <section class="faq-section" id="faq">
     <div class="container">
       <div class="section-header section-header--center reveal">
-        <div class="section-label">We Need You</div>
-        <h2 class="section-title">あなたの力が必要です</h2>
-        <p class="section-desc">実行委員会では、様々な専門性を持つメンバーを募集しています。あなたの経験が、世界記録を実現する力になる。</p>
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">よくある質問</h2>
       </div>
 
-      <div class="roles-grid">
-        <div class="role-card reveal">
-          <div class="role-card__icon">&#128227;</div>
-          <div class="role-card__title">広報・メディア担当</div>
-          <div class="role-card__count">2-3名 募集</div>
-          <p class="role-card__desc">プレスリリース配信、SNS運営、テレビ局・新聞社との取材調整。イベントの認知を最大化する。</p>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            子供も参加できますか？
+            <span class="faq-question__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">はい、お子様も参加いただけます。小学生以下のお子様は保護者の同伴が必要です。高校生以下は学生料金（2,500円）でご参加いただけます。</div>
+          </div>
         </div>
-        <div class="role-card reveal" style="transition-delay: 0.05s;">
-          <div class="role-card__icon">&#129309;</div>
-          <div class="role-card__title">スポンサー渉外担当</div>
-          <div class="role-card__count">2-3名 募集</div>
-          <p class="role-card__desc">冠スポンサーからブロンズまで12社の獲得。地元企業・農協との交渉、協賛メニューの提案。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            当日の持ち物は何が必要ですか？
+            <span class="faq-question__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">おにぎり作成に必要な材料・道具はすべてこちらで用意します。エプロン、飲み物、日焼け止めなどをお持ちいただくと快適です。記念Tシャツは当日受付でお渡しします。</div>
+          </div>
         </div>
-        <div class="role-card reveal" style="transition-delay: 0.1s;">
-          <div class="role-card__icon">&#128203;</div>
-          <div class="role-card__title">参加者募集・管理担当</div>
-          <div class="role-card__count">3-4名 募集</div>
-          <p class="role-card__desc">2,200人の募集戦略立案、申込管理、練習会の日程調整。学校・企業・地域団体へのアプローチ。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            駐車場はありますか？
+            <span class="faq-question__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">会場周辺に臨時駐車場を設けますが、台数に限りがあるため公共交通機関の利用を推奨しています。JR筑肥線の最寄り駅からシャトルバスの運行も予定しています。</div>
+          </div>
         </div>
-        <div class="role-card reveal" style="transition-delay: 0.15s;">
-          <div class="role-card__icon">&#127917;</div>
-          <div class="role-card__title">会場・ロジスティクス担当</div>
-          <div class="role-card__count">2-3名 募集</div>
-          <p class="role-card__desc">会場選定・契約、テーブル550台のレイアウト設計、材料調達、炊飯オペレーションの統括。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            雨天の場合はどうなりますか？
+            <span class="faq-question__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">小雨の場合はテント下で決行します。荒天で安全確保が困難な場合は延期となります。延期・中止の判断は前日18時までに公式サイトとメールでご案内します。</div>
+          </div>
         </div>
-        <div class="role-card reveal" style="transition-delay: 0.2s;">
-          <div class="role-card__icon">&#127909;</div>
-          <div class="role-card__title">記録・映像担当</div>
-          <div class="role-card__count">2-3名 募集</div>
-          <p class="role-card__desc">ギネス証拠資料の撮影計画、カメラマン手配、ドローン撮影許可、証拠書類の整備・提出。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            おにぎりを握った経験がなくても大丈夫ですか？
+            <span class="faq-question__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">もちろん大丈夫です。当日のルール説明で作り方を丁寧にお伝えします。各テーブルにスタッフが配置されますので、初めての方でも安心してご参加いただけます。</div>
+          </div>
         </div>
-        <div class="role-card reveal" style="transition-delay: 0.25s;">
-          <div class="role-card__icon">&#128170;</div>
-          <div class="role-card__title">ボランティア統括担当</div>
-          <div class="role-card__count">2-3名 募集</div>
-          <p class="role-card__desc">300人のボランティア募集・研修、110人のセクションリーダー選出、当日の人員配置管理。</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            キャンセルはできますか？
+            <span class="faq-question__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">開催14日前までのキャンセルは全額返金いたします。それ以降はTシャツ等の準備済みのためキャンセル料が発生します。詳細はお申し込み時の規約をご確認ください。</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            グループでまとめて申し込めますか？
+            <span class="faq-question__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">はい、グループでのお申し込みも可能です。10名以上の団体の場合は、同じテーブルエリアに配置するなどの対応もできますので、お申し込み時にご相談ください。</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 8: CTA + Footer -->
+  <!-- Section 9: CTA + Footer -->
   <section class="cta-section" id="join">
     <div class="container">
       <div class="cta-content reveal">
-        <div class="section-label">Join Us</div>
-        <h2 class="cta-title">糸島から、<br>世界記録を作ろう。</h2>
+        <div class="section-label">Join the Challenge</div>
+        <h2 class="cta-title">あなたの手で、<br>世界記録を作ろう。</h2>
         <p class="cta-desc">
-          9年間、誰も破れなかった記録。それは、誰も挑戦しなかっただけかもしれない。<br>
-          2,000人の手で握るおにぎりが、糸島を世界の地図に刻む。
+          2,000人がひとつの場所に集まり、同じ瞬間におにぎりを握る。<br>
+          その5分間が、9年ぶりの新しい歴史になる。
         </p>
 
         <div class="cta-actions">
-          <a href="https://forms.gle/dKenFQpsjgssSvP27" target="_blank" rel="noopener" class="btn btn-cta-primary">
-            実行委員会に参加する
+          <a href="#" class="btn btn-cta-primary">
+            参加を申し込む
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <a href="guidebook.pdf" download class="btn btn-cta-secondary">
@@ -1498,9 +1441,13 @@
         <div class="footer">
           <div class="footer-logo">
             <span class="triangle"></span>
-            糸島おにぎりギネス世界記録挑戦 実行委員会（設立準備中）
+            おむすびギネス糸島実行委員会（設立準備中）
           </div>
-          <div>&copy; 2026 Itoshima Onigiri Guinness Challenge</div>
+          <div>
+            <a href="committee/" class="footer-committee-link">実行委員会向け情報</a>
+            &nbsp;&middot;&nbsp;
+            &copy; 2026 Itoshima Omusubi Guinness Challenge
+          </div>
         </div>
       </div>
     </div>
@@ -1536,6 +1483,35 @@
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
+      });
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        const answer = item.querySelector('.faq-answer');
+        const isOpen = item.classList.contains('open');
+
+        // Close all other items
+        document.querySelectorAll('.faq-item.open').forEach(openItem => {
+          if (openItem !== item) {
+            openItem.classList.remove('open');
+            openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            openItem.querySelector('.faq-answer').style.maxHeight = '0';
+          }
+        });
+
+        // Toggle current item
+        if (isOpen) {
+          item.classList.remove('open');
+          button.setAttribute('aria-expanded', 'false');
+          answer.style.maxHeight = '0';
+        } else {
+          item.classList.add('open');
+          button.setAttribute('aria-expanded', 'true');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
       });
     });
   </script>
