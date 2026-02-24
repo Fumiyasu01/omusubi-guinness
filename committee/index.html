@@ -133,19 +133,52 @@
       border-bottom: 1px solid var(--border);
     }
 
+    .page-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 6px;
+    }
+
     .page-title {
       font-family: var(--font-serif);
       font-weight: 700;
       font-size: 1.6rem;
       letter-spacing: 0.02em;
-      margin-bottom: 6px;
       color: var(--text-primary);
+    }
+
+    .countdown {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      background: var(--accent-light);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      padding: 6px 16px;
+      flex-shrink: 0;
+    }
+
+    .countdown__number {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+
+    .countdown__label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
     }
 
     .page-subtitle {
       font-size: 0.88rem;
       color: var(--text-muted);
       font-weight: 400;
+      text-align: center;
     }
 
     /* ===== SECTION ===== */
@@ -534,9 +567,146 @@
       .header-links { gap: 12px; }
     }
 
+    /* ===== SHARED LINKS ===== */
+    .shared-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .shared-link {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 16px 20px;
+      text-decoration: none;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .shared-link:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-md);
+    }
+
+    .shared-link__icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .shared-link__text {
+      min-width: 0;
+    }
+
+    .shared-link__name {
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .shared-link__desc {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== MINUTES ===== */
+    .minutes-list {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    .minutes-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border-light);
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: background 0.15s;
+    }
+
+    .minutes-item:last-child { border-bottom: none; }
+    .minutes-item:hover { background: var(--bg-warm); }
+
+    .minutes-item__left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .minutes-item__date {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      min-width: 80px;
+    }
+
+    .minutes-item__title {
+      font-weight: 500;
+      font-size: 0.88rem;
+    }
+
+    .minutes-item__dl {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .minutes-item:hover .minutes-item__dl { color: var(--accent); }
+
+    .minutes-empty {
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== CONTACTS ===== */
+    .contacts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-card__org {
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 4px;
+    }
+
+    .contact-card__detail {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
     @media (max-width: 480px) {
       .quick-links { grid-template-columns: 1fr; }
       .page-title { font-size: 1.3rem; }
+      .page-title-row { flex-direction: column; gap: 12px; }
+      .shared-links { grid-template-columns: 1fr; }
+      .contacts-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .shared-links { grid-template-columns: 1fr; }
+      .contacts-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -564,9 +734,16 @@
 
   <main class="main">
 
-    <!-- Page Title -->
+    <!-- Page Title + Countdown -->
     <div class="page-title-area">
-      <h1 class="page-title">実行委員会ワークスペース</h1>
+      <div class="page-title-row">
+        <h1 class="page-title">実行委員会ワークスペース</h1>
+        <div class="countdown">
+          <span class="countdown__label">本番まで</span>
+          <span class="countdown__number" id="countdown-days"></span>
+          <span class="countdown__label">日</span>
+        </div>
+      </div>
       <p class="page-subtitle">おむすびギネス糸島 2026 &mdash; 内部運営情報</p>
     </div>
 
@@ -810,7 +987,99 @@
       </div>
     </section>
 
+    <!-- Shared Links -->
+    <section class="section">
+      <div class="section-head">
+        <span class="section-head__label">05</span>
+        <h2 class="section-head__title">共有リンク</h2>
+      </div>
+      <div class="shared-links">
+        <a href="#" class="shared-link">
+          <span class="shared-link__icon">&#128194;</span>
+          <div class="shared-link__text">
+            <div class="shared-link__name">Google Drive</div>
+            <div class="shared-link__desc">共有フォルダ</div>
+          </div>
+        </a>
+        <a href="#" class="shared-link">
+          <span class="shared-link__icon">&#128172;</span>
+          <div class="shared-link__text">
+            <div class="shared-link__name">LINE グループ</div>
+            <div class="shared-link__desc">実行委員会連絡用</div>
+          </div>
+        </a>
+        <a href="#" class="shared-link">
+          <span class="shared-link__icon">&#128202;</span>
+          <div class="shared-link__text">
+            <div class="shared-link__name">スポンサー管理表</div>
+            <div class="shared-link__desc">Google Sheets</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Minutes -->
+    <section class="section">
+      <div class="section-head">
+        <span class="section-head__label">06</span>
+        <h2 class="section-head__title">議事録</h2>
+      </div>
+      <div class="minutes-list">
+        <a href="../minutes/260221.pdf" download class="minutes-item">
+          <div class="minutes-item__left">
+            <span class="minutes-item__date">2026.02.21</span>
+            <span class="minutes-item__title">第1回 実行委員会準備会議</span>
+          </div>
+          <span class="minutes-item__dl">&darr; PDF</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Contacts -->
+    <section class="section">
+      <div class="section-head">
+        <span class="section-head__label">07</span>
+        <h2 class="section-head__title">関係機関連絡先</h2>
+      </div>
+      <div class="contacts-grid">
+        <div class="contact-card">
+          <div class="contact-card__org">糸島市役所</div>
+          <div class="contact-card__detail">地域振興課<br>092-323-1111</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card__org">糸島警察署</div>
+          <div class="contact-card__detail">092-323-0110</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card__org">糸島消防署</div>
+          <div class="contact-card__detail">092-322-4222</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card__org">糸島保健福祉事務所</div>
+          <div class="contact-card__detail">衛生課（食品衛生）<br>092-322-5579</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card__org">伊都の杜 しばふ公園</div>
+          <div class="contact-card__detail">会場管理<br>確認中</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card__org">ギネスワールドレコーズ</div>
+          <div class="contact-card__detail">東京オフィス<br>確認中</div>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <!-- Countdown Script -->
+  <script>
+    (function() {
+      var target = new Date('2026-05-30T00:00:00+09:00');
+      var now = new Date();
+      var diff = Math.ceil((target - now) / (1000 * 60 * 60 * 24));
+      document.getElementById('countdown-days').textContent = diff;
+    })();
+  </script>
 
   <!-- Footer -->
   <footer class="admin-footer">
