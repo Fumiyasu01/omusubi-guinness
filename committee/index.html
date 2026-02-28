@@ -465,58 +465,187 @@
       background: var(--border);
     }
 
-    /* ===== TEAM ===== */
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+    /* ===== ORG CHART ===== */
+    .org-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 0;
     }
 
-    .team-card {
+    .org-box {
       background: var(--bg-card);
       border: 1px solid var(--border-light);
-      border-radius: 12px;
-      padding: 28px 24px;
-      position: relative;
-      overflow: hidden;
+      border-radius: 10px;
+      padding: 14px 32px;
+      text-align: center;
       box-shadow: var(--shadow-sm);
     }
 
-    .team-card__accent {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
+    .org-box--primary {
+      border-color: var(--accent);
+      background: var(--accent-light);
     }
 
-    .team-card:nth-child(1) .team-card__accent { background: var(--red); }
-    .team-card:nth-child(2) .team-card__accent { background: var(--blue); }
-    .team-card:nth-child(3) .team-card__accent { background: var(--amber); }
-    .team-card:nth-child(4) .team-card__accent { background: var(--accent); }
-
-    .team-card__name {
-      font-family: var(--font-serif);
+    .org-box__role {
+      font-size: 0.68rem;
       font-weight: 700;
-      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
       margin-bottom: 2px;
     }
 
-    .team-card__role {
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      letter-spacing: 0.02em;
-      margin-bottom: 16px;
+    .org-box--primary .org-box__role { color: var(--accent); }
+
+    .org-box__name {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1rem;
     }
 
-    .team-card__list {
+    .org-line {
+      width: 2px;
+      height: 18px;
+      background: var(--border);
+    }
+
+    /* Department scroll wrapper */
+    .dept-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 4px;
+    }
+
+    .dept-scroll::-webkit-scrollbar { height: 6px; }
+    .dept-scroll::-webkit-scrollbar-track { background: var(--bg-warm); border-radius: 3px; }
+    .dept-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    /* Department tree row */
+    .dept-grid {
+      display: flex;
+      gap: 8px;
+      padding-top: 32px;
+      position: relative;
+      min-width: max-content;
+    }
+
+    /* Horizontal branch line at top */
+    .dept-grid::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--border);
+    }
+
+    .dept-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 14px 11px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      min-width: 125px;
+      flex: 1;
+    }
+
+    /* Vertical connector from horizontal line to each card */
+    .dept-card::after {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 32px;
+      background: var(--border);
+    }
+
+    .dept-card__accent {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .dept-card__head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 10px;
+      padding-top: 2px;
+    }
+
+    .dept-card__name {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .dept-card__owner {
+      font-size: 0.56rem;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 3px;
+      background: var(--bg-warm);
+      color: var(--text-secondary);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .dept-card__tasks {
       list-style: none;
     }
 
-    .team-card__list li {
-      font-size: 0.8rem;
+    .dept-card__tasks li {
+      font-size: 0.72rem;
       color: var(--text-secondary);
-      padding: 4px 0;
+      padding: 2px 0 2px 12px;
+      position: relative;
       line-height: 1.6;
+    }
+
+    .dept-card__tasks li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--border);
+    }
+
+    .dept-member {
+      display: inline-block;
+      font-size: 0.58rem;
+      font-weight: 600;
+      padding: 1px 4px;
+      border-radius: 3px;
+      margin-left: 2px;
+      vertical-align: baseline;
+    }
+
+    .dept-member--ok {
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+
+    .dept-member--tbd {
+      background: var(--bg-warm);
+      color: var(--text-muted);
+    }
+
+    .dept-card__sub {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border-light);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
 
     /* ===== FOOTER ===== */
@@ -552,8 +681,6 @@
       .quick-links { grid-template-columns: 1fr 1fr; }
       .roadmap { grid-template-columns: 1fr; }
       .budget-grid { grid-template-columns: 1fr; }
-      .team-grid { grid-template-columns: 1fr; }
-
       .budget-summary { flex-direction: column; gap: 16px; }
       .budget-summary__sep { width: 48px; height: 1px; }
 
@@ -940,61 +1067,151 @@
       </div>
     </section>
 
-    <!-- Team Structure -->
+    <!-- Org Chart -->
     <section class="section">
       <div class="section-head">
         <span class="section-head__label">04</span>
         <h2 class="section-head__title">体制図</h2>
       </div>
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="team-card__accent"></div>
-          <div class="team-card__name">松田 一葉</div>
-          <div class="team-card__role">実行委員長 / おむすび・集客・SNS</div>
-          <ul class="team-card__list">
-            <li>おむすびオペレーション（米・釜・梅干し調達）</li>
-            <li>広報 SNS（インスタ中心）</li>
-            <li>Tシャツ発注・配布管理</li>
-            <li>クラファン/魂参加枠の募集・管理</li>
-            <li>スポンサー営業（中内と共同）</li>
+
+      <!-- Hierarchy -->
+      <div class="org-top">
+        <div class="org-box org-box--primary">
+          <div class="org-box__role">実行委員長</div>
+          <div class="org-box__name">松田 一葉</div>
+        </div>
+        <div class="org-line"></div>
+        <div class="org-box">
+          <div class="org-box__role">副実行委員長</div>
+          <div class="org-box__name">石長 史康 ／ 中内 雄希</div>
+        </div>
+        <div class="org-line"></div>
+      </div>
+
+      <!-- 8 Departments -->
+      <div class="dept-scroll">
+      <div class="dept-grid">
+
+        <div class="dept-card">
+          <div class="dept-card__accent" style="background: var(--red);"></div>
+          <div class="dept-card__head">
+            <div class="dept-card__name">ギネス対応</div>
+            <span class="dept-card__owner">石長</span>
+          </div>
+          <ul class="dept-card__tasks">
+            <li>申請・折衝 <span class="dept-member dept-member--ok">石長</span></li>
+            <li>審判員確保・研修 <span class="dept-member dept-member--ok">石長</span></li>
+            <li>レギュレーション管理</li>
+            <li>証拠収集要件</li>
+            <li>映像ディレクション <span class="dept-member dept-member--ok">金丸さん</span></li>
           </ul>
         </div>
-        <div class="team-card">
-          <div class="team-card__accent"></div>
-          <div class="team-card__name">石長 史康</div>
-          <div class="team-card__role">ディレクション・ギネス・対外</div>
-          <ul class="team-card__list">
-            <li>全体ディレクション・スケジュール管理</li>
-            <li>ギネス折衝・審判員確保</li>
-            <li>映像・記録のディレクション</li>
-            <li>広報 HP・メディア対応</li>
-            <li>後援申請（教育委員会）</li>
+
+        <div class="dept-card">
+          <div class="dept-card__accent" style="background: var(--accent);"></div>
+          <div class="dept-card__head">
+            <div class="dept-card__name">おむすび</div>
+            <span class="dept-card__owner">松田</span>
+          </div>
+          <ul class="dept-card__tasks">
+            <li>食材調達 <span class="dept-member dept-member--ok">ゆきこちゃん</span></li>
+            <li>炊飯オペ <span class="dept-member dept-member--ok">松田</span></li>
+            <li>衛生管理 <span class="dept-member dept-member--ok">YUMEさん</span></li>
+            <li>当日配膳</li>
+          </ul>
+          <div class="dept-card__sub">米135kg・ガス釜15〜20台・梅干し2,700個</div>
+        </div>
+
+        <div class="dept-card">
+          <div class="dept-card__accent" style="background: var(--amber);"></div>
+          <div class="dept-card__head">
+            <div class="dept-card__name">会場・安全</div>
+            <span class="dept-card__owner">中内</span>
+          </div>
+          <ul class="dept-card__tasks">
+            <li>施工・設営 <span class="dept-member dept-member--ok">中内</span></li>
+            <li>音響・ステージ <span class="dept-member dept-member--ok">中内</span></li>
+            <li>警備 <span class="dept-member dept-member--tbd">外部委託</span></li>
+            <li>救護・AED</li>
+            <li>保険 <span class="dept-member dept-member--tbd">未定</span></li>
+            <li>当日オペ <span class="dept-member dept-member--ok">鮫島さん</span></li>
           </ul>
         </div>
-        <div class="team-card">
-          <div class="team-card__accent"></div>
-          <div class="team-card__name">中内 雄希</div>
-          <div class="team-card__role">会場・制作・スポンサー</div>
-          <ul class="team-card__list">
-            <li>会場設営全般・導線設計</li>
-            <li>音響・ステージの手配</li>
-            <li>当日MC・進行</li>
-            <li>安全・救護・警備の手配</li>
-            <li>経費積算・スポンサー営業</li>
+
+        <div class="dept-card">
+          <div class="dept-card__accent" style="background: var(--blue);"></div>
+          <div class="dept-card__head">
+            <div class="dept-card__name">運営</div>
+            <span class="dept-card__owner">石長</span>
+          </div>
+          <ul class="dept-card__tasks">
+            <li>参加者管理 <span class="dept-member dept-member--tbd">森さん候補</span></li>
+            <li>ボランティア <span class="dept-member dept-member--tbd">未定</span></li>
+            <li>出店者管理 <span class="dept-member dept-member--ok">矢野さん</span></li>
+            <li>当日受付</li>
+          </ul>
+          <div class="dept-card__sub">Peatix運用・問合せ・QR受付<br>Vol約300名: 募集・配置・研修</div>
+        </div>
+
+        <div class="dept-card">
+          <div class="dept-card__accent" style="background: #C48820;"></div>
+          <div class="dept-card__head">
+            <div class="dept-card__name">広報・メディア</div>
+            <span class="dept-card__owner">石長</span>
+          </div>
+          <ul class="dept-card__tasks">
+            <li>HP <span class="dept-member dept-member--ok">石長</span></li>
+            <li>メディア対応 <span class="dept-member dept-member--ok">石長</span></li>
+            <li>グッズ <span class="dept-member dept-member--ok">岡田まなみさん</span></li>
+            <li>映像記録 <span class="dept-member dept-member--ok">金丸さん</span></li>
           </ul>
         </div>
-        <div class="team-card">
-          <div class="team-card__accent"></div>
-          <div class="team-card__name">事務局</div>
-          <div class="team-card__role">事務局長 人選未定</div>
-          <ul class="team-card__list">
-            <li>参加者募集・管理（Peatix 2,500人）</li>
-            <li>出店者管理（募集・選定・配置）</li>
-            <li>問い合わせ対応（メール一本化）</li>
-            <li>入出金管理・口座管理</li>
-            <li>3軸間の情報共有</li>
+
+        <div class="dept-card">
+          <div class="dept-card__accent" style="background: #B85C3A;"></div>
+          <div class="dept-card__head">
+            <div class="dept-card__name">SNS・集客</div>
+            <span class="dept-card__owner">松田</span>
+          </div>
+          <ul class="dept-card__tasks">
+            <li>SNS <span class="dept-member dept-member--ok">梅野さん</span></li>
+            <li>事前ライブ</li>
+            <li>フライヤー配布</li>
+            <li>募集活動</li>
           </ul>
         </div>
+
+        <div class="dept-card">
+          <div class="dept-card__accent" style="background: #7B6B8A;"></div>
+          <div class="dept-card__head">
+            <div class="dept-card__name">スポンサー・資金</div>
+            <span class="dept-card__owner">中内</span>
+          </div>
+          <ul class="dept-card__tasks">
+            <li>スポンサー営業 <span class="dept-member dept-member--ok">中内・松田</span></li>
+            <li>スポンサー対応 <span class="dept-member dept-member--ok">中内</span></li>
+            <li>クラファン <span class="dept-member dept-member--ok">ヨシダさん</span></li>
+          </ul>
+          <div class="dept-card__sub">大口10社+小口50社・一業種一社</div>
+        </div>
+
+        <div class="dept-card">
+          <div class="dept-card__accent" style="background: var(--text-muted);"></div>
+          <div class="dept-card__head">
+            <div class="dept-card__name">総務・経理</div>
+            <span class="dept-card__owner">石長</span>
+          </div>
+          <ul class="dept-card__tasks">
+            <li>予算管理 <span class="dept-member dept-member--tbd">未定</span></li>
+            <li>入出金・口座 <span class="dept-member dept-member--tbd">未定</span></li>
+            <li>契約 <span class="dept-member dept-member--tbd">未定</span></li>
+            <li>行政手配</li>
+            <li>部門間調整</li>
+            <li>後援申請 <span class="dept-member dept-member--ok">石長</span></li>
+          </ul>
+        </div>
+
+      </div>
       </div>
     </section>
 
