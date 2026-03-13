@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>おむすびギネス世界記録挑戦 2026 | 糸島市 参加者募集</title>
-  <meta name="description" content="2026年5月30日、福岡県糸島市で2,000人がおむすびを同時に握るギネス世界記録に挑戦。参加者募集中。記念キット代には記念Tシャツ・ギネス認定証・糸島産食材が含まれます。">
-  <meta property="og:title" content="2,000人で握る、世界記録のおむすび。">
-  <meta property="og:description" content="2026年5月30日 糸島市。9年間破られていないギネス世界記録に挑む。参加者募集中。">
+  <title>おむすび世界記録挑戦 2026 | 糸島市 参加者募集</title>
+  <meta name="description" content="2026年5月30日、福岡県糸島市で世界一長いおむすびの列に挑戦。現記録153.59m（2,527個）を超える3,000個のおむすびを一列に並べ、ギネス世界記録更新を目指します。">
+  <meta property="og:title" content="世界一長い、おむすびの列。糸島から。">
+  <meta property="og:description" content="2026年5月30日 糸島市。3,000個のおむすびで世界最長記録に挑む。参加者募集中。">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,12 +102,11 @@
       gap: 8px;
     }
 
-    .nav-logo .triangle {
+    .nav-logo .circle {
       display: inline-block;
-      width: 0; height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-bottom: 17px solid var(--umeboshi);
+      width: 17px; height: 17px;
+      background: var(--umeboshi);
+      border-radius: 50%;
     }
 
     .nav-links {
@@ -184,41 +183,37 @@
       pointer-events: none;
     }
 
-    .hero-triangle {
+    .hero-circle {
       position: absolute;
-      width: 0; height: 0;
+      border-radius: 50%;
       opacity: 0.04;
       pointer-events: none;
     }
 
-    .hero-triangle--1 {
-      border-left: 80px solid transparent;
-      border-right: 80px solid transparent;
-      border-bottom: 140px solid var(--charcoal);
+    .hero-circle--1 {
+      width: 160px; height: 160px;
+      background: var(--charcoal);
       top: 10%; left: 5%;
       animation: float 12s ease-in-out infinite;
     }
 
-    .hero-triangle--2 {
-      border-left: 50px solid transparent;
-      border-right: 50px solid transparent;
-      border-bottom: 87px solid var(--umeboshi);
+    .hero-circle--2 {
+      width: 100px; height: 100px;
+      background: var(--umeboshi);
       top: 60%; right: 8%;
       animation: float 15s ease-in-out infinite 3s;
     }
 
-    .hero-triangle--3 {
-      border-left: 35px solid transparent;
-      border-right: 35px solid transparent;
-      border-bottom: 61px solid var(--earth-green);
+    .hero-circle--3 {
+      width: 70px; height: 70px;
+      background: var(--earth-green);
       bottom: 15%; left: 15%;
       animation: float 10s ease-in-out infinite 6s;
     }
 
-    .hero-triangle--4 {
-      border-left: 60px solid transparent;
-      border-right: 60px solid transparent;
-      border-bottom: 105px solid var(--charcoal);
+    .hero-circle--4 {
+      width: 120px; height: 120px;
+      background: var(--charcoal);
       top: 20%; right: 15%;
       animation: float 18s ease-in-out infinite 2s;
     }
@@ -1152,12 +1147,11 @@
       gap: 8px;
     }
 
-    .footer-logo .triangle {
+    .footer-logo .circle {
       display: inline-block;
-      width: 0; height: 0;
-      border-left: 7px solid transparent;
-      border-right: 7px solid transparent;
-      border-bottom: 12px solid var(--umeboshi);
+      width: 12px; height: 12px;
+      background: var(--umeboshi);
+      border-radius: 50%;
       opacity: 0.5;
     }
 
@@ -1258,13 +1252,13 @@
   <nav id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <span class="triangle"></span>
+        <span class="circle"></span>
         おむすびギネス糸島
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#story">想い</a></li>
         <li><a href="#details">イベント概要</a></li>
-        <li><a href="#pricing">記念キット代</a></li>
+        <li><a href="#pricing">参加費</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#" class="nav-cta">参加申し込み（準備中）</a></li>
       </ul>
@@ -1276,19 +1270,19 @@
 
   <!-- Section 1: Hero -->
   <section class="hero" id="top">
-    <div class="hero-triangle hero-triangle--1"></div>
-    <div class="hero-triangle hero-triangle--2"></div>
-    <div class="hero-triangle hero-triangle--3"></div>
-    <div class="hero-triangle hero-triangle--4"></div>
+    <div class="hero-circle hero-circle--1"></div>
+    <div class="hero-circle hero-circle--2"></div>
+    <div class="hero-circle hero-circle--3"></div>
+    <div class="hero-circle hero-circle--4"></div>
 
     <div class="hero-content">
       <div class="hero-badge">2026.5.30 参加者募集中</div>
       <h1 class="hero-title">
-        <span class="number">2,000</span>人で握る、<br>
-        <span class="accent">世界記録</span>のおむすび。
+        世界一長い、<br>
+        <span class="accent">おむすびの列。</span>
       </h1>
       <p class="hero-sub">
-        2026年5月30日、福岡県糸島市。<br>9年間破られていないギネス世界記録に、あなたも挑戦しませんか。
+        2026年5月30日、福岡県糸島市。<br>3,000個のおむすびで、世界最長記録に挑戦しませんか。
       </p>
       <div class="hero-countdown">
         <span class="hero-countdown__line"></span>
@@ -1305,9 +1299,8 @@
           参加を申し込む（準備中）
           <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="participant-guide.pdf" download class="btn btn-secondary">
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          ガイドブックPDF
+        <a href="#details" class="btn btn-secondary">
+          詳しく見る
         </a>
       </div>
     </div>
@@ -1323,78 +1316,45 @@
     <div class="container">
       <div class="section-header reveal">
         <div class="section-label">Our Story</div>
-        <h2 class="section-title" style="color:#fff;">なぜ、今おむすびなのか</h2>
+        <h2 class="section-title" style="color:#fff;">世界一長い、おむすびの列をつくろう</h2>
       </div>
 
       <div class="story-content reveal">
-        <p>2016年、日本各地で「おむすび同時作成」のギネス世界記録を巡る熱い競争が繰り広げられました。北海道、秋田、福島、鳥取、三重&mdash;&mdash;わずか4ヶ月の間に<strong>6つの記録が次々と塗り替えられた</strong>のです。</p>
+        <p>福岡県糸島市&mdash;&mdash;海と山に囲まれた食の宝庫から、新しい世界記録に挑みます。</p>
 
-        <p>そして2017年、おむすび発祥の地・川崎で<strong>1,876人</strong>という記録が打ち立てられました。それ以来、<strong>9年間、誰もこの記録に挑戦していません。</strong></p>
+        <p>挑戦するのは<strong>「Longest line of rice balls（おむすびの最長列）」</strong>。参加者全員が握ったおむすびを一列に並べ、<strong>世界一長いおむすびの列</strong>をつくります。</p>
 
-        <p>記録が破られなかったのではありません。誰も挑まなかっただけです。</p>
+        <p>現在の世界記録は、2019年に大分県玖珠町で達成された<strong>153.59メートル・2,527個</strong>。私たちの目標は、<strong>3,000個以上・約182メートル</strong>の新記録です。</p>
 
-        <p class="story-highlight">福岡県糸島市&mdash;&mdash;海と山に囲まれた食の宝庫から、この沈黙を破ります。糸島産の米と梅干しで握るおむすびが、2,000人の手を通じて、新しい世界記録になる。</p>
-
-        <p>あなたの「握る」が、歴史を変える5分間になります。</p>
+        <p class="story-highlight">糸島産の米と梅干しで握ったおむすびが、一列につながって世界記録になる。あなたの握った一個が、その列の一部になります。</p>
       </div>
     </div>
   </section>
 
-  <!-- Section 2b: 9-Year Gap Timeline -->
   <section class="timeline-section" id="history">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-label">Record History</div>
-        <h2 class="section-title" style="color:#fff;">9年間の空白</h2>
-        <p class="section-desc">2016年、わずか4ヶ月で6つの記録が次々と更新された。翌年の川崎以降、誰も挑戦していない。</p>
+        <div class="section-label">Record Challenge</div>
+        <h2 class="section-title" style="color:#fff;">記録への挑戦</h2>
+        <p class="section-desc">現記録153.59mを大きく超える、約182mの新記録を目指します。</p>
       </div>
 
       <div class="timeline reveal">
-        <div class="timeline-item">
-          <div class="timeline-item__date">2016.07.08</div>
-          <div class="timeline-item__title">帯広大谷高校（北海道） &mdash; 845人</div>
-          <div class="timeline-item__desc">文化祭の一環として、初の大規模同時作成記録が誕生。</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-item__date">2016.07.17</div>
-          <div class="timeline-item__title">能代市（秋田県） &mdash; 858人</div>
-          <div class="timeline-item__desc">わずか9日後に記録を更新。地域間の競争が始まる。</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-item__date">2016.10.09</div>
-          <div class="timeline-item__title">湯川村（福島県） &mdash; 976人</div>
-          <div class="timeline-item__desc">100人以上の大幅更新。記録更新レースが加速。</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-item__date">2016.10.10</div>
-          <div class="timeline-item__title">旭川市（北海道） &mdash; 1,273人</div>
-          <div class="timeline-item__desc">翌日に297人上乗せの記録更新。失格率1.5%の驚異的な品質管理。</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-item__date">2016.10.16</div>
-          <div class="timeline-item__title">鳥取市（鳥取県） &mdash; 1,436人</div>
-          <div class="timeline-item__desc">旭川の記録を受けて参加者を増員。競争は過熱。</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-item__date">2016.11.03</div>
-          <div class="timeline-item__title">桑名市（三重県） &mdash; 1,621人</div>
-          <div class="timeline-item__desc">2016年の最終記録。失格率2.9%の高い完成度。</div>
-        </div>
         <div class="timeline-item timeline-item--highlight">
-          <div class="timeline-item__date">2017.11.05</div>
-          <div class="timeline-item__title">川崎市（神奈川県） &mdash; 1,876人 &#x1F3C6;</div>
-          <div class="timeline-item__desc">おむすび発祥の地・川崎JCが樹立した現行の世界記録。</div>
+          <div class="timeline-item__date">現在の世界記録</div>
+          <div class="timeline-item__title">大分県玖珠町 &mdash; 153.59m / 2,527個 &#x1F3C6;</div>
+          <div class="timeline-item__desc">2019年に達成された「Longest line of rice balls」の現行記録。</div>
         </div>
 
         <div class="timeline-gap">
-          <div class="timeline-gap__text">- 9年間の空白 -</div>
-          <div class="timeline-gap__sub">2018年から2025年まで、誰も挑戦しなかった</div>
+          <div class="timeline-gap__text">&darr; 記録更新へ &darr;</div>
+          <div class="timeline-gap__sub">約1.2倍の記録更新を目指す</div>
         </div>
 
         <div class="timeline-item timeline-item--highlight">
           <div class="timeline-item__date">2026.05.30</div>
-          <div class="timeline-item__title" style="color:var(--gold);">糸島市（福岡県） &mdash; 2,000人超を目指して</div>
-          <div class="timeline-item__desc">9年間の沈黙を破る。福岡県糸島市から新たな歴史を刻む。</div>
+          <div class="timeline-item__title" style="color:var(--gold);">糸島市（福岡県） &mdash; 3,000個超・約182mを目指して</div>
+          <div class="timeline-item__desc">糸島産の米と梅干しで握ったおむすびを一列に並べ、世界最長記録に挑む。</div>
         </div>
       </div>
     </div>
@@ -1414,19 +1374,19 @@
           <div class="details-card__icon">&#128197;</div>
           <div class="details-card__number">5.30</div>
           <div class="details-card__label">2026年5月30日（土）</div>
-          <p class="details-card__desc">10:00受付開始、12:00おむすび作成スタート。</p>
+          <p class="details-card__desc">受付後、おむすびを握って列に並べます。所要時間は約2〜3時間を予定。</p>
         </div>
         <div class="details-card reveal" style="transition-delay: 0.1s;">
           <div class="details-card__icon">&#127968;</div>
           <div class="details-card__number" style="font-size: clamp(1.3rem, 2.5vw, 1.8rem);">糸島市運動公園<br>メインアリーナ</div>
           <div class="details-card__label">福岡県糸島市（屋内開催）</div>
-          <p class="details-card__desc">天候に左右されない屋内会場。JR筑肥線 糸島高校前駅より徒歩約40分（2.7km）。</p>
+          <p class="details-card__desc">天候に左右されない屋内会場。シャトルバスの運行を予定しています。</p>
         </div>
         <div class="details-card reveal" style="transition-delay: 0.2s;">
-          <div class="details-card__icon">&#9201;</div>
-          <div class="details-card__number">5<span style="font-size:0.5em">分間</span></div>
-          <div class="details-card__label">おむすび同時作成チャレンジ</div>
-          <p class="details-card__desc">全員が同時に5分間でおむすびを握り、ギネス公式審判員が認定します。</p>
+          <div class="details-card__icon">&#127834;</div>
+          <div class="details-card__number" style="font-size: clamp(1.3rem, 2.5vw, 1.8rem);">3,000<span style="font-size:0.5em">個</span></div>
+          <div class="details-card__label">おむすび最長列チャレンジ</div>
+          <p class="details-card__desc">参加者全員が握ったおむすびを一列に並べ、現記録153.59mを超える世界最長記録に挑みます。</p>
         </div>
       </div>
     </div>
@@ -1438,29 +1398,29 @@
       <div class="section-header section-header--center reveal">
         <div class="section-label">What You Get</div>
         <h2 class="section-title">参加特典</h2>
-        <p class="section-desc">記念キット代に含まれる特典の数々。世界記録の瞬間を、形に残せます。</p>
+        <p class="section-desc">参加費に含まれる特典の数々。世界記録の瞬間を、形に残せます。</p>
       </div>
 
       <div class="benefits-grid">
         <div class="benefit-card reveal">
           <div class="benefit-card__icon">&#127942;</div>
-          <div class="benefit-card__title">ギネス認定証</div>
-          <p class="benefit-card__desc">世界記録達成時、参加者全員にギネス公式の認定証が授与されます。</p>
+          <div class="benefit-card__title">公式参加認定証</div>
+          <p class="benefit-card__desc">世界記録達成時、希望者は公式参加認定証を申し込めます（詳細は後日案内）。</p>
         </div>
         <div class="benefit-card reveal" style="transition-delay: 0.1s;">
-          <div class="benefit-card__icon">&#128085;</div>
-          <div class="benefit-card__title">記念Tシャツ</div>
-          <p class="benefit-card__desc">イベント限定デザインのオリジナルTシャツ。当日のユニフォームとして着用します。</p>
-        </div>
-        <div class="benefit-card reveal" style="transition-delay: 0.2s;">
           <div class="benefit-card__icon">&#127834;</div>
           <div class="benefit-card__title">糸島産食材</div>
           <p class="benefit-card__desc">おむすびに使う米と梅干しはすべて糸島産。地元の味で世界記録に挑みます。</p>
         </div>
-        <div class="benefit-card reveal" style="transition-delay: 0.3s;">
+        <div class="benefit-card reveal" style="transition-delay: 0.2s;">
           <div class="benefit-card__icon">&#128247;</div>
           <div class="benefit-card__title">記念撮影</div>
-          <p class="benefit-card__desc">世界記録達成の瞬間を、2,500人全員で記念撮影。一生の思い出になります。</p>
+          <p class="benefit-card__desc">世界記録達成の瞬間を参加者全員で記念撮影。一生の思い出になります。</p>
+        </div>
+        <div class="benefit-card reveal" style="transition-delay: 0.3s;">
+          <div class="benefit-card__icon">&#127775;</div>
+          <div class="benefit-card__title">世界記録の一部に</div>
+          <p class="benefit-card__desc">あなたが握ったおむすびが、世界一長い列の一部として記録に残ります。</p>
         </div>
       </div>
     </div>
@@ -1469,8 +1429,8 @@
   <!-- Section 5: Mid CTA Banner -->
   <div class="mid-cta reveal">
     <div class="mid-cta__content">
-      <div class="mid-cta__text">定員2,500名に達し次第、募集終了</div>
-      <div class="mid-cta__sub">世界記録挑戦の一員になれるチャンスをお見逃しなく</div>
+      <div class="mid-cta__text">3,000個のおむすびで世界記録に挑戦</div>
+      <div class="mid-cta__sub">あなたの握ったおむすびが、世界一長い列の一部になる</div>
       <a href="#" class="btn btn-white">
         今すぐ参加を申し込む（準備中）
         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1478,36 +1438,33 @@
     </div>
   </div>
 
-  <!-- Section 6: Pricing -->
   <section class="pricing-section" id="pricing">
     <div class="container">
       <div class="section-header section-header--center reveal">
         <div class="section-label">Pricing</div>
-        <h2 class="section-title">記念キット代</h2>
-        <p class="section-desc">記念キット代にはおむすび材料・Tシャツ・保険料など、必要なものがすべて含まれています。</p>
+        <h2 class="section-title">参加費</h2>
+        <p class="section-desc">参加費にはおむすび材料・保険料など、参加に必要なものが含まれています。<br><strong style="color: var(--umeboshi);">※ 参加費は現在調整中です。確定次第お知らせします。</strong></p>
       </div>
 
       <div class="pricing-grid">
         <div class="pricing-card reveal">
-          <div class="pricing-card__type">一般</div>
-          <div class="pricing-card__price">&yen;5,000</div>
-          <div class="pricing-card__tax">税込</div>
+          <div class="pricing-card__type">一般（大人）</div>
+          <div class="pricing-card__price" style="font-size: clamp(1.5rem, 3vw, 2rem); color: var(--stone-500);">調整中</div>
+          <div class="pricing-card__tax">確定次第ご案内します</div>
           <ul class="pricing-card__includes">
             <li>おむすび材料（糸島産米・梅干し）</li>
-            <li>イベント限定記念Tシャツ</li>
-            <li>ギネス認定証（記録達成時）</li>
+            <li>公式参加認定証（希望者は別途申し込み可）</li>
             <li>イベント保険</li>
             <li>記念撮影参加</li>
           </ul>
         </div>
         <div class="pricing-card reveal" style="transition-delay: 0.1s;">
-          <div class="pricing-card__type">学生</div>
-          <div class="pricing-card__price">&yen;2,500</div>
-          <div class="pricing-card__tax">税込（小学生〜大学生）</div>
+          <div class="pricing-card__type">子供・学生</div>
+          <div class="pricing-card__price" style="font-size: clamp(1.5rem, 3vw, 2rem); color: var(--stone-500);">調整中</div>
+          <div class="pricing-card__tax">確定次第ご案内します</div>
           <ul class="pricing-card__includes">
             <li>おむすび材料（糸島産米・梅干し）</li>
-            <li>イベント限定記念Tシャツ</li>
-            <li>ギネス認定証（記録達成時）</li>
+            <li>公式参加認定証（希望者は別途申し込み可）</li>
             <li>イベント保険</li>
             <li>記念撮影参加</li>
           </ul>
@@ -1523,13 +1480,12 @@
     </div>
   </section>
 
-  <!-- Section 7: Schedule -->
   <section class="schedule-section" id="schedule">
     <div class="container">
       <div class="section-header section-header--center reveal">
         <div class="section-label">Schedule</div>
         <h2 class="section-title">当日の流れ</h2>
-        <p class="section-desc">受付から記録挑戦、記念撮影までの当日のスケジュール。</p>
+        <p class="section-desc">受付からおむすび作成、記録計測までの当日のスケジュール（予定）。</p>
       </div>
 
       <div class="schedule-list reveal">
@@ -1537,28 +1493,35 @@
           <div class="schedule-item__time">10:00</div>
           <div class="schedule-item__content">
             <div class="schedule-item__title">受付開始</div>
-            <div class="schedule-item__desc">受付でTシャツを受け取り、指定されたテーブルへ。おむすびの作り方を確認します。</div>
+            <div class="schedule-item__desc">受付で参加確認後、指定のエリアへ。おむすびの作り方とルールを確認します。</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-item__time">11:00</div>
+          <div class="schedule-item__content">
+            <div class="schedule-item__title">開会式・ルール説明</div>
+            <div class="schedule-item__desc">公式認定員の紹介、ルール説明、おむすび作成のデモンストレーション。</div>
           </div>
         </div>
         <div class="schedule-item">
           <div class="schedule-item__time">11:30</div>
           <div class="schedule-item__content">
-            <div class="schedule-item__title">開会式</div>
-            <div class="schedule-item__desc">ギネス公式審判員の紹介、ルール説明、おむすび作成のデモンストレーション。</div>
+            <div class="schedule-item__title">おむすび作成</div>
+            <div class="schedule-item__desc">参加者全員が糸島産の米と梅干しでおむすびを握ります。</div>
           </div>
         </div>
         <div class="schedule-item">
           <div class="schedule-item__time">12:00</div>
           <div class="schedule-item__content">
-            <div class="schedule-item__title">おむすび作成チャレンジ（5分間）</div>
-            <div class="schedule-item__desc">合図とともに全員が一斉におむすびを握ります。審判員が各テーブルを巡回して確認。</div>
+            <div class="schedule-item__title">おむすび列の配置・計測</div>
+            <div class="schedule-item__desc">握ったおむすびを一列に並べます。測量士が正式に長さを計測。</div>
           </div>
         </div>
         <div class="schedule-item">
           <div class="schedule-item__time">12:45</div>
           <div class="schedule-item__content">
-            <div class="schedule-item__title">結果発表</div>
-            <div class="schedule-item__desc">集計完了後、ギネス公式審判員が結果を発表。世界記録達成なるか。</div>
+            <div class="schedule-item__title">結果発表・記念撮影</div>
+            <div class="schedule-item__desc">計測結果を発表。世界記録達成なるか。全員で記念撮影。</div>
           </div>
         </div>
         <div class="schedule-item">
@@ -1572,7 +1535,6 @@
     </div>
   </section>
 
-  <!-- Section 8: FAQ -->
   <section class="faq-section" id="faq">
     <div class="container">
       <div class="section-header section-header--center reveal">
@@ -1583,11 +1545,21 @@
       <div class="faq-list reveal">
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
+            「最長列」チャレンジとは何ですか？
+            <span class="faq-question__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">参加者全員が握ったおむすびを一列に並べ、その列の長さで世界記録を目指すチャレンジです。ギネス世界記録の「Longest line of rice balls」カテゴリに挑戦します。現在の世界記録は153.59m（2,527個、2019年大分県玖珠町）で、私たちは3,000個以上・約182mの新記録を目指します。</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
             子供も参加できますか？
             <span class="faq-question__icon" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">おむすびを自力で1個握れる方であれば参加可能です。小学生のお子様は保護者の同伴が必要です（保護者も参加者として登録が必要です）。学生（小学生〜大学生）は学生料金（2,500円）でご参加いただけます。</div>
+            <div class="faq-answer__inner">おむすびを自力で1個握れる方であれば参加可能です。小学生のお子様は保護者の同伴が必要です（保護者も参加者として登録が必要です）。</div>
           </div>
         </div>
 
@@ -1597,17 +1569,17 @@
             <span class="faq-question__icon" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">おむすび作成に必要な材料・道具はすべてこちらで用意します。屋内会場ですので、特別な持ち物は不要です。飲み物をお持ちいただくと安心です。記念Tシャツは当日受付でお渡しします。</div>
+            <div class="faq-answer__inner">おむすび作成に必要な材料・道具はすべてこちらで用意します。屋内会場ですので、特別な持ち物は不要です。飲み物をお持ちいただくと安心です。</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            駐車場はありますか？
+            駐車場・アクセスについて教えてください
             <span class="faq-question__icon" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">参加者用の駐車場はございません。JR筑肥線 糸島高校前駅から徒歩約40分（2.7km）です。公共交通機関でのご来場をお願いいたします。会場周辺への路上駐車は近隣の方のご迷惑になりますので、絶対におやめください。</div>
+            <div class="faq-answer__inner">シャトルバスの運行を予定しています。詳細は決まり次第ご案内します。会場周辺への路上駐車は近隣の方のご迷惑になりますので、絶対におやめください。</div>
           </div>
         </div>
 
@@ -1617,7 +1589,7 @@
             <span class="faq-question__icon" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">屋内会場（糸島市運動公園メインアリーナ）での開催のため、雨天でも問題なく実施します。台風等の荒天で交通機関に大きな影響がある場合は中止となる可能性があります。なお、荒天中止の場合も返金はできかねますのでご了承ください（Tシャツはお届けいたします）。</div>
+            <div class="faq-answer__inner">屋内会場（糸島市運動公園メインアリーナ）での開催のため、雨天でも問題なく実施します。台風等の荒天で交通機関に大きな影響がある場合は中止となる可能性があります。</div>
           </div>
         </div>
 
@@ -1627,42 +1599,31 @@
             <span class="faq-question__icon" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">もちろん大丈夫です。事前にオンライン説明会（4月に複数回開催・アーカイブ配信あり）でルールや握り方のコツをお伝えします。ご自宅で梅干し1個入りのおむすび（80〜120g）を5分以内に握る練習をしていただくと、当日も安心です。</div>
+            <div class="faq-answer__inner">もちろん大丈夫です。当日、ルールや握り方のコツを説明します。丸形のおむすびに梅干しを入れて握るだけですので、どなたでも参加できます。</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            キャンセル・返金はできますか？
+            参加費はいくらですか？
             <span class="faq-question__icon" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">申し訳ございませんが、お申し込み後のキャンセル・返金には対応しておりません。荒天による中止の場合も同様です。なお、ご来場いただけなかった場合でも、記念Tシャツはお届けいたします。</div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            申し込みは1人ずつですか？
-            <span class="faq-question__icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer__inner">はい、お申し込みは1名ずつお願いしております。ご家族やお友達と参加される場合も、おひとりずつお申し込みください。</div>
+            <div class="faq-answer__inner">現在調整中です。確定次第、本サイトにてご案内いたします。参加費にはおむすび材料費・保険料が含まれます。</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 9: CTA + Footer -->
   <section class="cta-section" id="join">
     <div class="container">
       <div class="cta-content reveal">
         <div class="section-label">Join the Challenge</div>
-        <h2 class="cta-title">あなたの手で、<br>世界記録を作ろう。</h2>
+        <h2 class="cta-title">あなたのおむすびが、<br>世界記録の一部になる。</h2>
         <p class="cta-desc">
-          2,000人がひとつの場所に集まり、同じ瞬間におむすびを握る。<br>
-          その5分間が、9年ぶりの新しい歴史になる。
+          3,000個のおむすびを一列に並べて、世界最長記録に挑戦。<br>
+          あなたの握った一個が、歴史を変える一列になる。
         </p>
 
         <div class="cta-actions">
@@ -1670,21 +1631,17 @@
             参加を申し込む（準備中）
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="participant-guide.pdf" download class="btn btn-cta-secondary">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-            ガイドブックはこちら（PDF）
-          </a>
         </div>
 
         <div class="footer">
           <div class="footer-logo">
-            <span class="triangle"></span>
-            おむすびギネス糸島実行委員会（設立準備中）
+            <span class="circle" style="display:inline-block;width:12px;height:12px;background:var(--umeboshi);border-radius:50%;opacity:0.5;"></span>
+            おむすびギネス糸島実行委員会
           </div>
           <div>
             <a href="committee/" class="footer-committee-link">実行委員会向け情報</a>
             &nbsp;&middot;&nbsp;
-            &copy; 2026 Itoshima Omusubi Guinness Challenge
+            &copy; 2026 Itoshima Omusubi World Record Challenge
           </div>
         </div>
       </div>
