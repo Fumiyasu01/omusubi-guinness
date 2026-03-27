@@ -816,29 +816,53 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     }
 
-    /* ===== SECTION 6: PRICING (2 cards) ===== */
+    /* ===== SECTION 6: PRICING (4 cards) ===== */
     .pricing-section {
       background: var(--rice);
+    }
+
+    .pricing-early-banner {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 16px 24px;
+      background: linear-gradient(135deg, rgba(185,28,28,0.06) 0%, rgba(202,138,4,0.06) 100%);
+      border-radius: 12px;
+      border: 1px solid rgba(185,28,28,0.1);
+    }
+
+    .pricing-early-banner__title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--umeboshi);
+      margin-bottom: 4px;
+    }
+
+    .pricing-early-banner__sub {
+      font-size: 0.85rem;
+      color: var(--stone-500);
     }
 
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-      max-width: 800px;
+      gap: 24px;
+      max-width: 880px;
       margin: 0 auto;
     }
 
     .pricing-card {
       background: #fff;
       border-radius: 16px;
-      padding: 40px 32px;
+      padding: 36px 28px;
       text-align: center;
       border: 1px solid rgba(0,0,0,0.04);
       box-shadow: 0 1px 3px rgba(0,0,0,0.04);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .pricing-card:hover {
@@ -854,43 +878,57 @@
       background: var(--umeboshi);
     }
 
-    .pricing-card:nth-child(2)::before {
-      background: var(--earth-green);
-    }
+    .pricing-card--child::before { background: var(--earth-green); }
+    .pricing-card--free::before { background: var(--stone-300); }
+    .pricing-card--donation::before { background: var(--amber); }
 
     .pricing-card__type {
       font-family: var(--font-display);
       font-weight: 700;
       font-size: 1.1rem;
       margin-bottom: 8px;
+      min-height: 3.2em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .pricing-card__type small {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--stone-500);
+      margin-top: 2px;
     }
 
     .pricing-card__price {
       font-family: var(--font-display);
       font-weight: 900;
-      font-size: clamp(2.5rem, 5vw, 3.2rem);
+      font-size: clamp(2.2rem, 4.5vw, 2.8rem);
       line-height: 1.1;
       margin-bottom: 4px;
     }
 
-    .pricing-card:nth-child(1) .pricing-card__price { color: var(--umeboshi); }
-    .pricing-card:nth-child(2) .pricing-card__price { color: var(--earth-green); }
+    .pricing-card--adult .pricing-card__price { color: var(--umeboshi); }
+    .pricing-card--child .pricing-card__price { color: var(--earth-green); }
+    .pricing-card--free .pricing-card__price { color: var(--earth-green); font-size: clamp(2rem, 4vw, 2.5rem); }
+    .pricing-card--donation .pricing-card__price { color: var(--amber); }
 
     .pricing-card__tax {
       font-size: 0.8rem;
       color: var(--stone-500);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .pricing-card__includes {
       list-style: none;
       text-align: left;
+      flex: 1;
     }
 
     .pricing-card__includes li {
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: var(--charcoal-light);
-      padding: 6px 0;
+      padding: 5px 0;
       padding-left: 24px;
       position: relative;
       line-height: 1.6;
@@ -900,7 +938,7 @@
       content: '';
       position: absolute;
       left: 0;
-      top: 12px;
+      top: 11px;
       width: 16px; height: 16px;
       border-radius: 50%;
       background: rgba(63,98,18,0.1);
@@ -910,16 +948,286 @@
       content: '';
       position: absolute;
       left: 4px;
-      top: 17px;
+      top: 16px;
       width: 8px; height: 4px;
       border-left: 2px solid var(--earth-green);
       border-bottom: 2px solid var(--earth-green);
       transform: rotate(-45deg);
     }
 
-    .pricing-cta {
+    .pricing-card--donation .pricing-card__includes li::before {
+      background: rgba(146,64,14,0.1);
+    }
+
+    .pricing-card--donation .pricing-card__includes li::after {
+      border-left-color: var(--amber);
+      border-bottom-color: var(--amber);
+    }
+
+    .pricing-card__action {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--stone-200);
+    }
+
+    .pricing-card__btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 24px;
+      font-size: 0.92rem;
+      font-family: var(--font-body);
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .pricing-card__btn--primary {
+      background: var(--umeboshi);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(185,28,28,0.25);
+    }
+
+    .pricing-card__btn--primary:hover {
+      background: var(--umeboshi-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(185,28,28,0.35);
+    }
+
+    .pricing-card--child .pricing-card__btn--primary {
+      background: var(--earth-green);
+      box-shadow: 0 4px 14px rgba(63,98,18,0.25);
+    }
+
+    .pricing-card--child .pricing-card__btn--primary:hover {
+      background: var(--earth-green-light);
+      box-shadow: 0 6px 20px rgba(63,98,18,0.35);
+    }
+
+    .pricing-card__btn--donation {
+      background: var(--amber);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(146,64,14,0.25);
+    }
+
+    .pricing-card__btn--donation:hover {
+      background: var(--amber-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(146,64,14,0.3);
+    }
+
+    .pricing-card__btn-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .pricing-card__note {
+      font-size: 0.75rem;
+      color: var(--stone-500);
+      line-height: 1.6;
+      margin-top: 8px;
       text-align: center;
-      margin-top: 48px;
+    }
+
+    .pricing-card--donation {
+      background: linear-gradient(135deg, #fff 0%, rgba(202,138,4,0.03) 100%);
+    }
+
+    .pricing-card__badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(202,138,4,0.1);
+      color: var(--amber);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 100px;
+      letter-spacing: 0.06em;
+    }
+
+    .pricing-trust {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-top: 40px;
+      font-size: 0.78rem;
+      color: var(--stone-500);
+    }
+
+    .pricing-trust__item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pricing-trust__divider {
+      color: var(--stone-300);
+    }
+
+    /* ===== SECTION: VOLUNTEER ===== */
+    .volunteer-section {
+      background: rgba(63,98,18,0.02);
+    }
+
+    .volunteer-highlight {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 16px 24px;
+      background: linear-gradient(135deg, rgba(63,98,18,0.06) 0%, rgba(63,98,18,0.03) 100%);
+      border-radius: 12px;
+      border: 1px solid rgba(63,98,18,0.1);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--earth-green);
+    }
+
+    .volunteer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .volunteer-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 24px;
+      border: 1px solid rgba(0,0,0,0.04);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .volunteer-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+    }
+
+    .volunteer-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--earth-green);
+    }
+
+    .volunteer-card__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .volunteer-card__icon {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .volunteer-card__type {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .volunteer-card__status {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+    }
+
+    .volunteer-card__status--open {
+      background: rgba(63,98,18,0.1);
+      color: var(--earth-green);
+    }
+
+    .volunteer-card__status--few {
+      background: rgba(146,64,14,0.1);
+      color: var(--amber);
+    }
+
+    .volunteer-card__status--closed {
+      background: var(--stone-200);
+      color: var(--stone-500);
+    }
+
+    .volunteer-card__capacity {
+      font-size: 0.78rem;
+      color: var(--stone-500);
+      margin-bottom: 12px;
+    }
+
+    .volunteer-card__desc {
+      font-size: 0.85rem;
+      color: var(--charcoal-light);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .volunteer-card__when {
+      font-size: 0.78rem;
+      color: var(--stone-500);
+      padding: 8px 12px;
+      background: var(--stone-100);
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .volunteer-card__when strong {
+      color: var(--charcoal);
+    }
+
+    .volunteer-card__perk {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--earth-green);
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .volunteer-card__perk::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+    }
+
+    .volunteer-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .btn-volunteer {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--earth-green);
+      color: #fff;
+      padding: 16px 40px;
+      font-size: 1rem;
+      font-family: var(--font-body);
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(63,98,18,0.25);
+    }
+
+    .btn-volunteer:hover {
+      background: var(--earth-green-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(63,98,18,0.35);
     }
 
     /* ===== SECTION 7: SCHEDULE ===== */
@@ -1172,6 +1480,7 @@
       .benefits-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
     }
 
     @media (max-width: 768px) {
@@ -1204,6 +1513,19 @@
 
       .pricing-grid {
         grid-template-columns: 1fr;
+      }
+
+      .volunteer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-trust {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .pricing-trust__divider {
+        display: none;
       }
 
       .hero {
@@ -1259,8 +1581,9 @@
         <li><a href="#story">想い</a></li>
         <li><a href="#details">イベント概要</a></li>
         <li><a href="#pricing">参加費</a></li>
+        <li><a href="#volunteer">ボランティア</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#" class="nav-cta">参加申し込み（準備中）</a></li>
+        <li><a href="#pricing" class="nav-cta">参加申し込み</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
         <span></span><span></span><span></span>
@@ -1295,8 +1618,8 @@
       </div>
 
       <div class="hero-actions">
-        <a href="#" class="btn btn-primary">
-          参加を申し込む（準備中）
+        <a href="#pricing" class="btn btn-primary">
+          参加を申し込む
           <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="#details" class="btn btn-secondary">
@@ -1326,7 +1649,7 @@
 
         <p>現在の世界記録は、2019年に大分県玖珠町で達成された<strong>153.59メートル・2,527個</strong>。私たちの目標は、<strong>3,000個以上・約182メートル</strong>の新記録です。</p>
 
-        <p class="story-highlight">糸島産の米と梅干しで握ったおむすびが、一列につながって世界記録になる。あなたの握った一個が、その列の一部になります。</p>
+        <p class="story-highlight">糸島産ほか厳選国産米と梅干しで握ったおむすびが、一列につながって世界記録になる。あなたの握った一個が、その列の一部になります。</p>
       </div>
     </div>
   </section>
@@ -1354,7 +1677,7 @@
         <div class="timeline-item timeline-item--highlight">
           <div class="timeline-item__date">2026.05.30</div>
           <div class="timeline-item__title" style="color:var(--gold);">糸島市（福岡県） &mdash; 3,000個超・約182mを目指して</div>
-          <div class="timeline-item__desc">糸島産の米と梅干しで握ったおむすびを一列に並べ、世界最長記録に挑む。</div>
+          <div class="timeline-item__desc">糸島産ほか厳選国産米と梅干しで握ったおむすびを一列に並べ、世界最長記録に挑む。</div>
         </div>
       </div>
     </div>
@@ -1371,19 +1694,19 @@
 
       <div class="details-cards">
         <div class="details-card reveal">
-          <div class="details-card__icon">&#128197;</div>
+          <div class="details-card__icon" aria-hidden="true">&#128197;</div>
           <div class="details-card__number">5.30</div>
           <div class="details-card__label">2026年5月30日（土）</div>
           <p class="details-card__desc">11:00受付開始。おむすびを握って列に並べ、15:00頃に結果発表予定。</p>
         </div>
         <div class="details-card reveal" style="transition-delay: 0.1s;">
-          <div class="details-card__icon">&#127968;</div>
+          <div class="details-card__icon" aria-hidden="true">&#127968;</div>
           <div class="details-card__number" style="font-size: clamp(1.3rem, 2.5vw, 1.8rem);">糸島市運動公園<br>メインアリーナ</div>
           <div class="details-card__label">福岡県糸島市（屋内開催）</div>
           <p class="details-card__desc">天候に左右されない屋内会場。シャトルバスの運行を予定しています。</p>
         </div>
         <div class="details-card reveal" style="transition-delay: 0.2s;">
-          <div class="details-card__icon">&#127834;</div>
+          <div class="details-card__icon" aria-hidden="true">&#127834;</div>
           <div class="details-card__number" style="font-size: clamp(1.3rem, 2.5vw, 1.8rem);">3,000<span style="font-size:0.5em">個</span></div>
           <div class="details-card__label">おむすび最長列チャレンジ</div>
           <p class="details-card__desc">参加者全員が握ったおむすびを一列に並べ、現記録153.59mを超える世界最長記録に挑みます。</p>
@@ -1403,17 +1726,17 @@
 
       <div class="benefits-grid">
         <div class="benefit-card reveal">
-          <div class="benefit-card__icon">&#127834;</div>
-          <div class="benefit-card__title">糸島産食材</div>
-          <p class="benefit-card__desc">おむすびに使う米と梅干しはすべて糸島産。地元の味で世界記録に挑みます。</p>
+          <div class="benefit-card__icon" aria-hidden="true">&#127834;</div>
+          <div class="benefit-card__title">厳選国産食材</div>
+          <p class="benefit-card__desc">糸島産ほか全国から届く厳選米と梅干しを使用。日本の美味しさで世界記録に挑みます。</p>
         </div>
         <div class="benefit-card reveal" style="transition-delay: 0.2s;">
-          <div class="benefit-card__icon">&#128247;</div>
+          <div class="benefit-card__icon" aria-hidden="true">&#128247;</div>
           <div class="benefit-card__title">記念撮影</div>
           <p class="benefit-card__desc">世界記録達成の瞬間を参加者全員で記念撮影。一生の思い出になります。</p>
         </div>
         <div class="benefit-card reveal" style="transition-delay: 0.3s;">
-          <div class="benefit-card__icon">&#127873;</div>
+          <div class="benefit-card__icon" aria-hidden="true">&#127873;</div>
           <div class="benefit-card__title">おむすび記念グッズ</div>
           <p class="benefit-card__desc">イベント限定の記念グッズをお届けします。内容は追ってご紹介します。</p>
         </div>
@@ -1426,8 +1749,8 @@
     <div class="mid-cta__content">
       <div class="mid-cta__text">3,000個のおむすびで世界記録に挑戦</div>
       <div class="mid-cta__sub">あなたの握ったおむすびが、世界一長い列の一部になる</div>
-      <a href="#" class="btn btn-white">
-        今すぐ参加を申し込む（準備中）
+      <a href="#pricing" class="btn btn-white">
+        今すぐ参加を申し込む
         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -1438,37 +1761,194 @@
       <div class="section-header section-header--center reveal">
         <div class="section-label">Pricing</div>
         <h2 class="section-title">参加費</h2>
-        <p class="section-desc">参加費にはおむすび材料・保険料など、参加に必要なものが含まれています。<br><strong style="color: var(--umeboshi);">※ 参加費は現在調整中です。確定次第お知らせします。</strong></p>
+        <p class="section-desc">参加費にはおむすび材料・保険料など、参加に必要なものが含まれています。</p>
+      </div>
+
+      <!-- 早割バナー（切り替え時はこのdivを削除またはコメントアウト） -->
+      <div class="pricing-early-banner reveal" id="earlyBirdBanner">
+        <div class="pricing-early-banner__title">早割価格で受付中</div>
+        <div class="pricing-early-banner__sub">お得な早割価格でお申し込みいただけます</div>
       </div>
 
       <div class="pricing-grid">
-        <div class="pricing-card reveal">
+        <!-- 大人チケット -->
+        <div class="pricing-card pricing-card--adult reveal">
           <div class="pricing-card__type">一般（大人）</div>
-          <div class="pricing-card__price" style="font-size: clamp(1.5rem, 3vw, 2rem); color: var(--stone-500);">調整中</div>
-          <div class="pricing-card__tax">確定次第ご案内します</div>
+          <div class="pricing-card__price">&yen;3,500</div>
+          <div class="pricing-card__tax">税込 / 早割価格</div>
           <ul class="pricing-card__includes">
-            <li>おむすび材料（糸島産米・梅干し）</li>
+            <li>おむすび材料（糸島産ほか厳選国産米・梅干し）</li>
+            <li>記念キット</li>
             <li>イベント保険</li>
             <li>記念撮影参加</li>
           </ul>
+          <div class="pricing-card__action">
+            <a href="https://square.link/u/GGHRhNqy" target="_blank" rel="noopener noreferrer"
+               class="pricing-card__btn pricing-card__btn--primary"
+               aria-label="大人チケットを購入する（Square決済ページが新しいタブで開きます）"
+               data-ticket-type="adult">
+              チケットを購入する
+              <svg class="pricing-card__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
         </div>
-        <div class="pricing-card reveal" style="transition-delay: 0.1s;">
-          <div class="pricing-card__type">子供・学生</div>
-          <div class="pricing-card__price" style="font-size: clamp(1.5rem, 3vw, 2rem); color: var(--stone-500);">調整中</div>
-          <div class="pricing-card__tax">確定次第ご案内します</div>
+
+        <!-- 子どもチケット -->
+        <div class="pricing-card pricing-card--child reveal" style="transition-delay: 0.1s;">
+          <div class="pricing-card__type">子ども<small>（小学生〜高校生）</small></div>
+          <div class="pricing-card__price">&yen;1,500</div>
+          <div class="pricing-card__tax">税込 / 早割価格</div>
           <ul class="pricing-card__includes">
-            <li>おむすび材料（糸島産米・梅干し）</li>
+            <li>おむすび材料（糸島産ほか厳選国産米・梅干し）</li>
+            <li>記念キット</li>
             <li>イベント保険</li>
             <li>記念撮影参加</li>
           </ul>
+          <div class="pricing-card__action">
+            <a href="https://square.link/u/zXvYDy8G" target="_blank" rel="noopener noreferrer"
+               class="pricing-card__btn pricing-card__btn--primary"
+               aria-label="子どもチケットを購入する（Square決済ページが新しいタブで開きます）"
+               data-ticket-type="child">
+              チケットを購入する
+              <svg class="pricing-card__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 未就学児 -->
+        <div class="pricing-card pricing-card--free reveal" style="transition-delay: 0.2s;">
+          <div class="pricing-card__type">未就学児</div>
+          <div class="pricing-card__price">無料</div>
+          <div class="pricing-card__tax">保護者同伴が必要です</div>
+          <ul class="pricing-card__includes">
+            <li>おむすび材料（糸島産ほか厳選国産米・梅干し）</li>
+            <li>記念キット</li>
+            <li>イベント保険</li>
+            <li>記念撮影参加</li>
+          </ul>
+          <div class="pricing-card__action">
+            <p class="pricing-card__note">保護者の方が大人チケットをご購入ください。未就学児のお子様は申し込み不要で一緒にご参加いただけます。</p>
+          </div>
+        </div>
+
+        <!-- 応援寄付 -->
+        <div class="pricing-card pricing-card--donation reveal" style="transition-delay: 0.3s;">
+          <div class="pricing-card__badge">応援</div>
+          <div class="pricing-card__type">応援寄付</div>
+          <div class="pricing-card__price">&yen;10,000</div>
+          <div class="pricing-card__tax">一口</div>
+          <ul class="pricing-card__includes">
+            <li>感謝のお礼の手紙をお届け</li>
+            <li>厳選国産米の追加調達に活用</li>
+            <li>会場設営・運営費用に活用</li>
+          </ul>
+          <div class="pricing-card__action">
+            <a href="https://square.link/u/pCpgQ8Wd" target="_blank" rel="noopener noreferrer"
+               class="pricing-card__btn pricing-card__btn--donation"
+               aria-label="応援寄付をする（Square決済ページが新しいタブで開きます）"
+               data-ticket-type="donation">
+              この挑戦を応援する
+              <svg class="pricing-card__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </a>
+            <p class="pricing-card__note">※ イベント参加権は含まれません</p>
+          </div>
         </div>
       </div>
 
-      <div class="pricing-cta reveal">
-        <a href="#" class="btn btn-primary">
-          参加を申し込む（準備中）
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <!-- 信頼性バッジ -->
+      <div class="pricing-trust reveal">
+        <div class="pricing-trust__item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span>SSL暗号化通信</span>
+        </div>
+        <span class="pricing-trust__divider">|</span>
+        <div class="pricing-trust__item">
+          <span>Powered by <strong>Square</strong></span>
+        </div>
+        <span class="pricing-trust__divider">|</span>
+        <div class="pricing-trust__item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>安全な決済</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Volunteer -->
+  <section class="volunteer-section" id="volunteer">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <div class="section-label">Volunteer</div>
+        <h2 class="section-title">ボランティア募集</h2>
+        <p class="section-desc">世界記録への挑戦を、一緒につくりませんか。</p>
+      </div>
+
+      <div class="volunteer-highlight reveal">
+        ボランティアは参加費無料。担当業務終了後、ギネスチャレンジにも参加できます。
+      </div>
+
+      <div class="volunteer-grid">
+        <!-- おむすびボランティア -->
+        <div class="volunteer-card reveal">
+          <div class="volunteer-card__icon" aria-hidden="true">&#127834;</div>
+          <div class="volunteer-card__header">
+            <div class="volunteer-card__type">おむすびボランティア</div>
+            <span class="volunteer-card__status volunteer-card__status--open">募集中</span>
+          </div>
+          <div class="volunteer-card__capacity">定員 20名</div>
+          <div class="volunteer-card__desc">当日にお米を炊くお手伝いをしていただきます。3,000個のおむすびを支える重要な役割です。</div>
+          <div class="volunteer-card__when"><strong>5/30（土）早朝〜</strong></div>
+          <div class="volunteer-card__perk">担当終了後ギネスチャレンジに参加可能</div>
+        </div>
+
+        <!-- 会場受付ボランティア -->
+        <div class="volunteer-card reveal" style="transition-delay: 0.1s;">
+          <div class="volunteer-card__icon" aria-hidden="true">&#128203;</div>
+          <div class="volunteer-card__header">
+            <div class="volunteer-card__type">会場受付ボランティア</div>
+            <span class="volunteer-card__status volunteer-card__status--open">募集中</span>
+          </div>
+          <div class="volunteer-card__capacity">定員 20名</div>
+          <div class="volunteer-card__desc">事前決済済みの参加者であることを確認し、ギネスチャレンジスペースへご案内します。</div>
+          <div class="volunteer-card__when"><strong>5/30（土）10:30〜</strong></div>
+          <div class="volunteer-card__perk">担当終了後ギネスチャレンジに参加可能</div>
+        </div>
+
+        <!-- 会場設営ボランティア -->
+        <div class="volunteer-card reveal" style="transition-delay: 0.2s;">
+          <div class="volunteer-card__icon" aria-hidden="true">&#128736;</div>
+          <div class="volunteer-card__header">
+            <div class="volunteer-card__type">会場設営ボランティア</div>
+            <span class="volunteer-card__status volunteer-card__status--open">募集中</span>
+          </div>
+          <div class="volunteer-card__capacity">定員 50名（実行委員含む）</div>
+          <div class="volunteer-card__desc">前日の緑シート敷きと、当日朝のブルーシート・テーブル設置を行います。世界記録の舞台をつくる仕事です。</div>
+          <div class="volunteer-card__when"><strong>5/29（金）20:00〜22:00</strong>（前日作業あり）<br><strong>5/30（土）8:45〜11:00</strong></div>
+          <div class="volunteer-card__perk">担当終了後ギネスチャレンジに参加可能</div>
+        </div>
+
+        <!-- 会場案内ボランティア -->
+        <div class="volunteer-card reveal" style="transition-delay: 0.3s;">
+          <div class="volunteer-card__icon" aria-hidden="true">&#128652;</div>
+          <div class="volunteer-card__header">
+            <div class="volunteer-card__type">会場案内ボランティア</div>
+            <span class="volunteer-card__status volunteer-card__status--open">募集中</span>
+          </div>
+          <div class="volunteer-card__capacity">定員 10名</div>
+          <div class="volunteer-card__desc">シャトルバス停車地や駐車場から体育館まで、参加者をご案内します。</div>
+          <div class="volunteer-card__when"><strong>5/30（土）10:00〜</strong></div>
+          <div class="volunteer-card__perk">担当終了後ギネスチャレンジに参加可能</div>
+        </div>
+      </div>
+
+      <div class="volunteer-cta reveal">
+        <a href="https://forms.gle/arbVXheiKgoMCe8YA" class="btn-volunteer"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="ボランティア応募フォームを開く（Google Formが新しいタブで開きます）">
+          ボランティアに応募する
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
+        <p style="font-size: 0.78rem; color: var(--stone-500); margin-top: 12px;">※ Google フォームが開きます</p>
       </div>
     </div>
   </section>
@@ -1500,7 +1980,7 @@
           <div class="schedule-item__time">13:00</div>
           <div class="schedule-item__content">
             <div class="schedule-item__title">おむすび作成・列への配置</div>
-            <div class="schedule-item__desc">参加者全員が糸島産の米と梅干しでおむすびを握り、一列に並べていきます。</div>
+            <div class="schedule-item__desc">参加者全員が糸島産ほか厳選国産米と梅干しでおむすびを握り、一列に並べていきます。</div>
           </div>
         </div>
         <div class="schedule-item">
@@ -1602,7 +2082,26 @@
             <span class="faq-question__icon" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">現在調整中です。確定次第、本サイトにてご案内いたします。参加費にはおむすび材料費・保険料が含まれます。</div>
+            <div class="faq-answer__inner">大人（一般）¥3,500、子ども（小学生〜高校生）¥1,500、未就学児は無料です（いずれも税込）。参加費にはおむすび材料費（糸島産ほか厳選国産米・梅干し）・イベント保険料が含まれます。お支払いはSquareの安全な決済ページで行います。</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ボランティアとして参加したいのですが？
+            <span class="faq-question__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">ボランティア募集セクションからお申し込みください。おむすび・受付・設営・案内の4種類があります。ボランティアは参加費無料で、担当業務終了後にギネスチャレンジにもご参加いただけます。</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ボランティアの活動時間はどのくらいですか？
+            <span class="faq-question__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">種別によって異なります。会場設営は前日（5/29 20:00〜22:00）と当日朝（5/30 8:45〜11:00）の作業があります。その他のボランティアは当日のみです。詳しくはボランティア募集セクションをご確認ください。</div>
           </div>
         </div>
       </div>
@@ -1620,16 +2119,19 @@
         </p>
 
         <div class="cta-actions">
-          <a href="#" class="btn btn-cta-primary">
-            参加を申し込む（準備中）
+          <a href="#pricing" class="btn btn-cta-primary">
+            参加チケットを選ぶ
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#volunteer" class="btn btn-cta-secondary">
+            ボランティアとして参加する
           </a>
         </div>
 
         <div class="footer">
           <div class="footer-logo">
             <span class="circle" style="display:inline-block;width:12px;height:12px;background:var(--umeboshi);border-radius:50%;opacity:0.5;"></span>
-            おむすびギネス糸島実行委員会
+            おむすび糸島実行委員会
           </div>
           <div>
             <a href="committee/" class="footer-committee-link">実行委員会向け情報</a>
@@ -1657,6 +2159,7 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
@@ -1680,6 +2183,19 @@
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
+      });
+    });
+
+    // Square決済リンクのクリックトラッキング
+    document.querySelectorAll('.pricing-card__btn[target="_blank"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        var ticketType = this.getAttribute('data-ticket-type');
+        if (typeof gtag === 'function') {
+          gtag('event', 'begin_checkout', {
+            item_name: ticketType,
+            link_url: this.href
+          });
+        }
       });
     });
 
