@@ -1243,6 +1243,12 @@
       box-shadow: 0 6px 20px rgba(63,98,18,0.35);
     }
 
+    .volunteer-cta--top {
+      text-align: center;
+      margin-bottom: 32px;
+      display: none;
+    }
+
     /* ===== SECTION 7: SCHEDULE ===== */
     .schedule-section {
       background: var(--stone-100);
@@ -1530,6 +1536,10 @@
 
       .volunteer-grid {
         grid-template-columns: 1fr;
+      }
+
+      .volunteer-cta--top {
+        display: block;
       }
 
       .pricing-trust {
@@ -1898,6 +1908,15 @@
 
       <div class="volunteer-highlight reveal">
         ボランティアは参加費無料。担当業務終了後、ギネスチャレンジにも参加できます。
+      </div>
+
+      <div class="volunteer-cta volunteer-cta--top reveal">
+        <a href="https://forms.gle/arbVXheiKgoMCe8YA" class="btn-volunteer"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="ボランティア応募フォームを開く（Google Formが新しいタブで開きます）">
+          ボランティアに応募する
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
       </div>
 
       <div class="volunteer-grid">
