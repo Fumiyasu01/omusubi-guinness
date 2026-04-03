@@ -345,6 +345,50 @@
       color: var(--stone-500);
     }
 
+    /* ===== Hero Progress Bar ===== */
+    .hero-progress {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 36px;
+      animation: fadeUp 0.8s ease-out 0.75s both;
+    }
+    .hero-progress__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+    .hero-progress__count {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--stone-500);
+    }
+    .hero-progress__count strong {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--umeboshi);
+    }
+    .hero-progress__remaining {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--stone-500);
+    }
+    .hero-progress__bar {
+      width: 100%;
+      height: 8px;
+      background: var(--stone-200);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .hero-progress__fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--umeboshi), var(--umeboshi-light));
+      border-radius: 4px;
+      transition: width 1.2s ease-out;
+    }
+
     .hero-actions {
       display: flex;
       gap: 16px;
@@ -1640,6 +1684,17 @@
         <span class="hero-countdown__line"></span>
       </div>
 
+      <!-- 参加者プログレスバー（PROGRESS_VISIBLE を false にすると非表示） -->
+      <div class="hero-progress" id="heroProgress" style="display: none;">
+        <div class="hero-progress__header">
+          <span class="hero-progress__count"><strong id="progressCurrent">13</strong> / <strong id="progressGoal">1,000</strong>人</span>
+          <span class="hero-progress__remaining">あと <strong id="progressRemaining">987</strong>人</span>
+        </div>
+        <div class="hero-progress__bar">
+          <div class="hero-progress__fill" id="progressFill" style="width: 0%;"></div>
+        </div>
+      </div>
+
       <div class="hero-actions">
         <a href="#pricing" class="btn btn-primary">
           参加を申し込む
@@ -1895,6 +1950,7 @@
         </div>
       </div>
       <p style="font-size: 0.75rem; color: var(--stone-500); text-align: center; margin-top: 16px;">※ 決済は事務局「伊都の杜自治会」のSquareで処理されます。</p>
+      <p style="font-size: 0.75rem; color: var(--stone-500); text-align: center; margin-top: 8px;">※ 主催者都合による開催中止を除き、お申し込み後の返金はいたしかねます。</p>
     </div>
   </section>
 
@@ -2120,6 +2176,16 @@
         </div>
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
+            キャンセル・返金はできますか？
+            <span class="faq-question__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">主催者都合による開催中止を除き、お申し込み後の返金はいたしかねます。あらかじめご了承ください。</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
             ボランティアとして参加したいのですが？
             <span class="faq-question__icon" aria-hidden="true"></span>
           </button>
@@ -2184,6 +2250,27 @@
       var diff = Math.ceil((target - now) / (1000 * 60 * 60 * 24));
       var el = document.getElementById('hero-countdown-days');
       if (el) el.textContent = diff > 0 ? diff : 0;
+    })();
+
+    // Progress bar
+    // ── 更新する箇所はここだけ ──
+    var PROGRESS_CURRENT = 13;   // 現在の参加者数
+    var PROGRESS_GOAL    = 1000; // 目標人数
+    var PROGRESS_VISIBLE = false; // true にすると表示
+    // ────────────────────────────
+    (function() {
+      if (!PROGRESS_VISIBLE) return;
+      var wrap = document.getElementById('heroProgress');
+      if (!wrap) return;
+      wrap.style.display = '';
+      var pct = Math.min(Math.round(PROGRESS_CURRENT / PROGRESS_GOAL * 100), 100);
+      var remaining = Math.max(PROGRESS_GOAL - PROGRESS_CURRENT, 0);
+      document.getElementById('progressCurrent').textContent = PROGRESS_CURRENT.toLocaleString();
+      document.getElementById('progressGoal').textContent = PROGRESS_GOAL.toLocaleString();
+      document.getElementById('progressRemaining').textContent = remaining.toLocaleString();
+      setTimeout(function() {
+        document.getElementById('progressFill').style.width = pct + '%';
+      }, 400);
     })();
 
     // Scroll reveal
