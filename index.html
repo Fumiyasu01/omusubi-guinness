@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>おむすび世界記録挑戦 2026 | 糸島市 参加者募集</title>
-  <meta name="description" content="2026年5月30日、福岡県糸島市で世界一長いおむすびの列に挑戦。現記録153.59m（2,527個）を超える3,000個のおむすびを一列に並べ、ギネス世界記録更新を目指します。">
+  <title>おむすび世界記録挑戦 2026 | 糸島市（開催日程調整中）</title>
+  <meta name="description" content="福岡県糸島市で世界一長いおむすびの列に挑戦。現記録153.59m（2,527個）を超える3,000個のおむすびを一列に並べ、ギネス世界記録更新を目指します。※開催日程は2026年内で調整中です。">
   <meta property="og:title" content="世界一長い、おむすびの列。糸島から。">
-  <meta property="og:description" content="2026年5月30日 糸島市。3,000個のおむすびで世界最長記録に挑む。参加者募集中。">
+  <meta property="og:description" content="糸島市。3,000個のおむすびで世界最長記録に挑む。開催日程は調整中です。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://omusubi-guinness-itoshima.com">
   <meta property="og:image" content="https://omusubi-guinness-itoshima.com/ogp.jpg">
@@ -16,7 +16,7 @@
   <meta property="og:site_name" content="おむすび糸島 2026">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="世界一長い、おむすびの列。糸島から。">
-  <meta name="twitter:description" content="2026年5月30日 糸島市。3,000個のおむすびで世界最長記録に挑む。参加者募集中。">
+  <meta name="twitter:description" content="糸島市。3,000個のおむすびで世界最長記録に挑む。開催日程は調整中です。">
   <meta name="twitter:image" content="https://omusubi-guinness-itoshima.com/ogp.jpg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -1674,6 +1674,71 @@
       .hero-title { font-size: 2rem; }
       .section-title { font-size: 1.6rem; }
     }
+
+    /* ===== POSTPONE BANNER ===== */
+    .postpone-banner {
+      background: linear-gradient(135deg, var(--umeboshi-dark) 0%, var(--umeboshi) 100%);
+      color: #fff;
+      padding: 80px 24px 28px;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      border-bottom: 4px solid var(--gold);
+    }
+    .postpone-banner__label {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .postpone-banner__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.6vw, 1.65rem);
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .postpone-banner__body {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      max-width: 720px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+    .postpone-banner__body strong {
+      color: var(--gold);
+      font-weight: 700;
+    }
+    @media (max-width: 640px) {
+      .postpone-banner { padding: 76px 20px 24px; }
+      .postpone-banner__title { font-size: 1.05rem; }
+      .postpone-banner__body { font-size: 0.85rem; }
+    }
+
+    /* ===== DISABLED CTA (準備中ボタン) ===== */
+    .pricing-card__btn--disabled,
+    .btn-volunteer--disabled {
+      background: var(--stone-200) !important;
+      color: var(--stone-500) !important;
+      cursor: not-allowed !important;
+      pointer-events: none;
+      box-shadow: none !important;
+      border: 1px dashed var(--stone-300) !important;
+    }
+    .pricing-card__btn--disabled:hover,
+    .btn-volunteer--disabled:hover {
+      transform: none !important;
+      background: var(--stone-200) !important;
+    }
+    .volunteer-card__status--paused {
+      background: var(--stone-200) !important;
+      color: var(--stone-500) !important;
+    }
   </style>
 </head>
 <body>
@@ -1691,13 +1756,23 @@
         <li><a href="#pricing">記念キット</a></li>
         <li><a href="#volunteer">ボランティア</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#pricing" class="nav-cta">参加申し込み</a></li>
+        <li><a href="#pricing" class="nav-cta">受付状況</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
+
+  <!-- 延期のお知らせ -->
+  <div class="postpone-banner" role="alert" aria-label="開催日程に関するお知らせ">
+    <div class="postpone-banner__label">重要なお知らせ</div>
+    <div class="postpone-banner__title">開催日程の延期について</div>
+    <p class="postpone-banner__body">
+      ギネス認定員招集に必要な資金準備の都合により、開催日を当初予定の2026年5月30日から<strong>2026年11月28日（土）</strong>に変更する方向で日程を調整しています。<br>
+      これに伴い、参加チケットおよびボランティアの受付を<strong>一時停止</strong>しております。詳細が確定し次第、本サイトおよびInstagramにてご案内いたします。
+    </p>
+  </div>
 
   <!-- Section 1: Hero -->
   <section class="hero" id="top">
@@ -1707,15 +1782,16 @@
     <div class="hero-circle hero-circle--4"></div>
 
     <div class="hero-content">
-      <div class="hero-badge">2026.5.30 参加者募集中</div>
+      <div class="hero-badge">日程調整中｜受付一時停止</div>
       <h1 class="hero-title">
         世界一長い、<br>
         <span class="accent">おむすびの列。</span>
       </h1>
       <p class="hero-sub">
-        2026年5月30日、福岡県糸島市。<br>3,000個のおむすびで、世界最長記録に挑戦しませんか。
+        福岡県糸島市。<br>3,000個のおむすびで、世界最長記録に挑戦しませんか。<br>
+        <small style="opacity:0.85;">※開催日程は調整中です（2026年内開催予定）</small>
       </p>
-      <div class="hero-countdown">
+      <div class="hero-countdown" style="display:none;">
         <span class="hero-countdown__line"></span>
         <div class="hero-countdown__body">
           <span class="hero-countdown__label">本番まで</span>
@@ -1738,7 +1814,7 @@
 
       <div class="hero-actions">
         <a href="#pricing" class="btn btn-primary">
-          参加を申し込む
+          受付再開のお知らせを見る
           <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="#details" class="btn btn-secondary">
@@ -1794,7 +1870,7 @@
         </div>
 
         <div class="timeline-item timeline-item--highlight">
-          <div class="timeline-item__date">2026.05.30</div>
+          <div class="timeline-item__date">2026年内（日程調整中）</div>
           <div class="timeline-item__title" style="color:var(--gold);">糸島市（福岡県） &mdash; 3,000個超・約182mを目指して</div>
           <div class="timeline-item__desc">糸島産ほか厳選国産米と梅干しで握ったおむすびを一列に並べ、世界最長記録に挑む。</div>
         </div>
@@ -1814,9 +1890,9 @@
       <div class="details-cards">
         <div class="details-card reveal">
           <div class="details-card__icon" aria-hidden="true">&#128197;</div>
-          <div class="details-card__number">5.30</div>
-          <div class="details-card__label">2026年5月30日（土）</div>
-          <p class="details-card__desc">11:00受付開始。おむすびを握って列に並べ、15:00頃に結果発表予定。</p>
+          <div class="details-card__number" style="font-size: clamp(1.3rem, 2.5vw, 1.8rem);">日程調整中</div>
+          <div class="details-card__label">2026年内開催予定</div>
+          <p class="details-card__desc">資金準備の都合により日程を再調整中です。確定次第、本サイトおよびInstagramでお知らせします。</p>
         </div>
         <div class="details-card reveal" style="transition-delay: 0.1s;">
           <div class="details-card__icon" aria-hidden="true">&#127968;</div>
@@ -1867,9 +1943,9 @@
   <div class="mid-cta reveal">
     <div class="mid-cta__content">
       <div class="mid-cta__text">3,000個のおむすびで世界記録に挑戦</div>
-      <div class="mid-cta__sub">あなたの握ったおむすびが、世界一長い列の一部になる</div>
+      <div class="mid-cta__sub">現在、参加チケットの受付を一時停止しております。再開時期は決まり次第お知らせします。</div>
       <a href="#pricing" class="btn btn-white">
-        今すぐ参加を申し込む
+        受付状況を確認する
         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -1883,10 +1959,10 @@
         <p class="section-desc">記念キットにはおむすび材料・保険料など、参加に必要なものが含まれています。</p>
       </div>
 
-      <!-- 早割バナー（切り替え時はこのdivを削除またはコメントアウト） -->
-      <div class="pricing-early-banner reveal" id="earlyBirdBanner">
-        <div class="pricing-early-banner__title">早割価格で受付中</div>
-        <div class="pricing-early-banner__sub">お得な早割価格でお申し込みいただけます</div>
+      <!-- 受付一時停止バナー -->
+      <div class="pricing-early-banner reveal" id="earlyBirdBanner" style="background: var(--stone-100); color: var(--stone-700); border: 1px dashed var(--stone-300);">
+        <div class="pricing-early-banner__title" style="color: var(--umeboshi-dark);">参加チケットの受付を一時停止しています</div>
+        <div class="pricing-early-banner__sub">開催日程の再調整に伴い、受付を一時停止しております。再開時期は決まり次第お知らせします。下記は再開後の予定価格です。</div>
       </div>
 
       <div class="pricing-grid">
@@ -1902,13 +1978,11 @@
             <li>記念撮影参加</li>
           </ul>
           <div class="pricing-card__action">
-            <a href="https://square.link/u/GGHRhNqy" target="_blank" rel="noopener noreferrer"
-               class="pricing-card__btn pricing-card__btn--primary"
-               aria-label="大人チケットを購入する（Square決済ページが新しいタブで開きます）"
-               data-ticket-type="adult">
-              チケットを購入する
-              <svg class="pricing-card__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
+            <span class="pricing-card__btn pricing-card__btn--primary pricing-card__btn--disabled"
+                  role="button" aria-disabled="true"
+                  aria-label="大人チケットは現在受付準備中です">
+              現在受付準備中
+            </span>
           </div>
         </div>
 
@@ -1924,13 +1998,11 @@
             <li>記念撮影参加</li>
           </ul>
           <div class="pricing-card__action">
-            <a href="https://square.link/u/zXvYDy8G" target="_blank" rel="noopener noreferrer"
-               class="pricing-card__btn pricing-card__btn--primary"
-               aria-label="子どもチケットを購入する（Square決済ページが新しいタブで開きます）"
-               data-ticket-type="child">
-              チケットを購入する
-              <svg class="pricing-card__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
+            <span class="pricing-card__btn pricing-card__btn--primary pricing-card__btn--disabled"
+                  role="button" aria-disabled="true"
+                  aria-label="子どもチケットは現在受付準備中です">
+              現在受付準備中
+            </span>
           </div>
         </div>
 
@@ -1962,14 +2034,12 @@
             <li>会場設営・運営費用に活用</li>
           </ul>
           <div class="pricing-card__action">
-            <a href="https://square.link/u/pCpgQ8Wd" target="_blank" rel="noopener noreferrer"
-               class="pricing-card__btn pricing-card__btn--donation"
-               aria-label="応援寄付をする（Square決済ページが新しいタブで開きます）"
-               data-ticket-type="donation">
-              この挑戦を応援する
-              <svg class="pricing-card__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            </a>
-            <p class="pricing-card__note">※ イベント参加権は含まれません</p>
+            <span class="pricing-card__btn pricing-card__btn--donation pricing-card__btn--disabled"
+                  role="button" aria-disabled="true"
+                  aria-label="応援寄付は現在受付準備中です">
+              現在受付準備中
+            </span>
+            <p class="pricing-card__note">※ イベント参加権は含まれません<br>※ 受付再開時期は決まり次第お知らせします</p>
           </div>
         </div>
       </div>
@@ -1990,8 +2060,8 @@
           <span>安全な決済</span>
         </div>
       </div>
-      <p style="font-size: 0.75rem; color: var(--stone-500); text-align: center; margin-top: 16px;">※ 決済は事務局「伊都の杜自治会」のSquareで処理されます。</p>
-      <p style="font-size: 0.75rem; color: var(--stone-500); text-align: center; margin-top: 8px;">※ 主催者都合による開催中止を除き、お申し込み後の返金はいたしかねます。</p>
+      <p style="font-size: 0.75rem; color: var(--stone-500); text-align: center; margin-top: 16px;">※ 受付再開後、決済は事務局「伊都の杜自治会」のSquareで処理されます。</p>
+      <p style="font-size: 0.75rem; color: var(--stone-500); text-align: center; margin-top: 8px;">※ 開催日程の再調整に伴い、現在チケットの新規受付を一時停止しています。</p>
     </div>
   </section>
 
@@ -2004,17 +2074,16 @@
         <p class="section-desc">世界記録への挑戦を、一緒につくりませんか。</p>
       </div>
 
-      <div class="volunteer-highlight reveal">
-        ボランティアは無料。活動の合間におむすびを握って、ギネスチャレンジにも参加できます。
+      <div class="volunteer-highlight reveal" style="background: var(--stone-100); color: var(--stone-700); border: 1px dashed var(--stone-300);">
+        開催日程の再調整に伴い、現在ボランティア募集を一時停止しています。再開時期は決まり次第お知らせします。
       </div>
 
       <div class="volunteer-cta volunteer-cta--top reveal">
-        <a href="https://forms.gle/arbVXheiKgoMCe8YA" class="btn-volunteer"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="ボランティア応募フォームを開く（Google Formが新しいタブで開きます）">
-          ボランティアに応募する
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
+        <span class="btn-volunteer btn-volunteer--disabled"
+              role="button" aria-disabled="true"
+              aria-label="ボランティア募集は現在停止中です">
+          現在募集を一時停止しています
+        </span>
       </div>
 
       <div class="volunteer-grid">
@@ -2023,11 +2092,11 @@
           <div class="volunteer-card__icon" aria-hidden="true">&#127834;</div>
           <div class="volunteer-card__header">
             <div class="volunteer-card__type">おむすびボランティア</div>
-            <span class="volunteer-card__status volunteer-card__status--open">募集中</span>
+            <span class="volunteer-card__status volunteer-card__status--paused">停止中</span>
           </div>
           <div class="volunteer-card__capacity">定員 20名</div>
           <div class="volunteer-card__desc">当日にお米を炊くお手伝いをしていただきます。3,000個のおむすびを支える重要な役割です。</div>
-          <div class="volunteer-card__when"><strong>5/30（土）8:30頃〜</strong></div>
+          <div class="volunteer-card__when"><strong>当日朝〜（日程調整中）</strong></div>
           <div class="volunteer-card__perk">活動中に交代しながらギネスチャレンジに参加可能</div>
         </div>
 
@@ -2036,11 +2105,11 @@
           <div class="volunteer-card__icon" aria-hidden="true">&#128203;</div>
           <div class="volunteer-card__header">
             <div class="volunteer-card__type">会場受付ボランティア</div>
-            <span class="volunteer-card__status volunteer-card__status--open">募集中</span>
+            <span class="volunteer-card__status volunteer-card__status--paused">停止中</span>
           </div>
           <div class="volunteer-card__capacity">定員 20名</div>
           <div class="volunteer-card__desc">事前決済済みの参加者であることを確認し、ギネスチャレンジスペースへご案内します。</div>
-          <div class="volunteer-card__when"><strong>5/30（土）10:00頃〜</strong></div>
+          <div class="volunteer-card__when"><strong>当日午前〜（日程調整中）</strong></div>
           <div class="volunteer-card__perk">活動中に交代しながらギネスチャレンジに参加可能</div>
         </div>
 
@@ -2049,11 +2118,11 @@
           <div class="volunteer-card__icon" aria-hidden="true">&#128736;</div>
           <div class="volunteer-card__header">
             <div class="volunteer-card__type">会場設営ボランティア</div>
-            <span class="volunteer-card__status volunteer-card__status--open">募集中</span>
+            <span class="volunteer-card__status volunteer-card__status--paused">停止中</span>
           </div>
           <div class="volunteer-card__capacity">定員 50名（実行委員含む）</div>
           <div class="volunteer-card__desc">前日のシート敷きと、イベント終了後の撤収作業を行います。世界記録の舞台をつくり、片付ける大切な仕事です。</div>
-          <div class="volunteer-card__when"><strong>5/29（金）20:00〜22:00</strong>（前日作業）<br><strong>5/30（土）14:00頃〜</strong>（撤収作業）</div>
+          <div class="volunteer-card__when"><strong>前日夜（前日作業）</strong><br><strong>当日午後〜（撤収作業）</strong>（日程調整中）</div>
           <div class="volunteer-card__perk">撤収前におむすびを握ってギネスチャレンジに参加可能</div>
         </div>
 
@@ -2062,23 +2131,22 @@
           <div class="volunteer-card__icon" aria-hidden="true">&#128652;</div>
           <div class="volunteer-card__header">
             <div class="volunteer-card__type">会場案内ボランティア</div>
-            <span class="volunteer-card__status volunteer-card__status--open">募集中</span>
+            <span class="volunteer-card__status volunteer-card__status--paused">停止中</span>
           </div>
           <div class="volunteer-card__capacity">定員 10名</div>
           <div class="volunteer-card__desc">シャトルバス停車地や駐車場から体育館まで、参加者をご案内します。</div>
-          <div class="volunteer-card__when"><strong>5/30（土）10:00頃〜</strong></div>
+          <div class="volunteer-card__when"><strong>当日午前〜（日程調整中）</strong></div>
           <div class="volunteer-card__perk">活動中に交代しながらギネスチャレンジに参加可能</div>
         </div>
       </div>
 
       <div class="volunteer-cta reveal">
-        <a href="https://forms.gle/arbVXheiKgoMCe8YA" class="btn-volunteer"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="ボランティア応募フォームを開く（Google Formが新しいタブで開きます）">
-          ボランティアに応募する
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
-        <p style="font-size: 0.78rem; color: var(--stone-500); margin-top: 12px;">※ Google フォームが開きます</p>
+        <span class="btn-volunteer btn-volunteer--disabled"
+              role="button" aria-disabled="true"
+              aria-label="ボランティア募集は現在停止中です">
+          現在募集を一時停止しています
+        </span>
+        <p style="font-size: 0.78rem; color: var(--stone-500); margin-top: 12px;">※ 募集再開はInstagram（@HAPPY_MATTI）および本サイトでお知らせします</p>
       </div>
     </div>
   </section>
@@ -2212,7 +2280,7 @@
             <span class="faq-question__icon" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">大人（一般）¥3,500、子ども（小学生〜高校生）¥1,500、未就学児は無料です（いずれも税込）。記念キット代にはおむすび材料費（糸島産ほか厳選国産米・梅干し）・イベント保険料が含まれます。お支払いはSquareの安全な決済ページで行います。</div>
+            <div class="faq-answer__inner">大人（一般）¥3,500、子ども（小学生〜高校生）¥1,500、未就学児は無料です（いずれも税込）。記念キット代にはおむすび材料費（糸島産ほか厳選国産米・梅干し）・イベント保険料が含まれます。なお、現在は開催日程の再調整に伴いチケット受付を一時停止しています。受付再開時はSquareの安全な決済ページにてご案内します。</div>
           </div>
         </div>
         <div class="faq-item">
@@ -2231,7 +2299,7 @@
             <span class="faq-question__icon" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">ボランティア募集セクションからお申し込みください。おむすび・受付・設営・案内の4種類があります。ボランティアは無料で、活動中に交代しながらギネスチャレンジにもご参加いただけます。</div>
+            <div class="faq-answer__inner">おむすび・受付・設営・案内の4種類のボランティアを予定しています。ボランティアは無料で、活動中に交代しながらギネスチャレンジにもご参加いただけます。<strong>現在は開催日程の再調整に伴い募集を一時停止しています。</strong>再開時はInstagram（@HAPPY_MATTI）および本サイトでお知らせします。</div>
           </div>
         </div>
 
@@ -2241,7 +2309,7 @@
             <span class="faq-question__icon" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">種別によって異なります。会場設営は前日（5/29 20:00〜22:00）と当日朝（5/30 8:45〜11:00）の作業があります。その他のボランティアは当日のみです。詳しくはボランティア募集セクションをご確認ください。</div>
+            <div class="faq-answer__inner">種別によって異なります。会場設営は前日夜と当日朝の作業があります。その他のボランティアは当日のみです。具体的な時間は開催日程の確定後にお知らせします。詳しくはボランティア募集セクションをご確認ください。</div>
           </div>
         </div>
       </div>
@@ -2274,12 +2342,12 @@
         </p>
 
         <div class="cta-actions">
-          <a href="#pricing" class="btn btn-cta-primary">
-            参加チケットを選ぶ
+          <a href="https://www.instagram.com/happy_matti" target="_blank" rel="noopener noreferrer" class="btn btn-cta-primary">
+            最新情報をフォロー
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#volunteer" class="btn btn-cta-secondary">
-            ボランティアとして参加する
+          <a href="#pricing" class="btn btn-cta-secondary">
+            受付状況を確認する
           </a>
         </div>
 
@@ -2299,14 +2367,14 @@
   </section>
 
   <script>
-    // Countdown
-    (function() {
-      var target = new Date('2026-05-30T00:00:00+09:00');
-      var now = new Date();
-      var diff = Math.ceil((target - now) / (1000 * 60 * 60 * 24));
-      var el = document.getElementById('hero-countdown-days');
-      if (el) el.textContent = diff > 0 ? diff : 0;
-    })();
+    // Countdown — 開催日程の再調整中のため一時非表示
+    // (function() {
+    //   var target = new Date('2026-11-28T00:00:00+09:00');
+    //   var now = new Date();
+    //   var diff = Math.ceil((target - now) / (1000 * 60 * 60 * 24));
+    //   var el = document.getElementById('hero-countdown-days');
+    //   if (el) el.textContent = diff > 0 ? diff : 0;
+    // })();
 
     // Progress bar
     // ── 更新する箇所はここだけ ──
